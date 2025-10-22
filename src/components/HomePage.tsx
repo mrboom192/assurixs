@@ -1,21 +1,4 @@
-import image_5053957a31d22f3266e44c1a849421b9934c470e from "figma:asset/5053957a31d22f3266e44c1a849421b9934c470e.png";
-import image_5fbb5aae366a85cc612e2bea7c255384185cc87e from "figma:asset/5fbb5aae366a85cc612e2bea7c255384185cc87e.png";
-import image_a3c4484a3ff39e44e9a0a192415c13a1d9bb21ae from "figma:asset/a3c4484a3ff39e44e9a0a192415c13a1d9bb21ae.png";
 import { useState } from "react";
-import image_c9a78abffa3a363c8009626ef067abc60ea343a5 from "figma:asset/c9a78abffa3a363c8009626ef067abc60ea343a5.png";
-import image_36dc3f7ba5f0f3990ae677ff978059b5185e7f3e from "figma:asset/36dc3f7ba5f0f3990ae677ff978059b5185e7f3e.png";
-import image_7ef82c84805ea004958c1025e48dc07a0cbf743c from "figma:asset/7ef82c84805ea004958c1025e48dc07a0cbf743c.png";
-import aetnaLogo from "figma:asset/584f286fdb007ecd3749a0312a4329d835679d0c.png";
-import anthemLogo from "figma:asset/7ef82c84805ea004958c1025e48dc07a0cbf743c.png";
-import cignaLogo from "figma:asset/444a42043dbedf0604acb7b88d1c61fd425810c7.png";
-import unitedHealthcareLogo from "figma:asset/873de5852330d4d0812460aa7e45a9b104bc730f.png";
-import blueCrossLogo from "figma:asset/d6e1c8f3a5b2e9d4c7a6f8b3e2d1c9a7b5f4e3d2.png";
-import wellCareLogo from "figma:asset/7a08c3f9e1b6d2a5c8f4e3d9b7a6c5f8e2d1b0a9.png";
-import ambetterLogo from "figma:asset/4e5d6c7b8a9f0e1d2c3b4a5f6e7d8c9b0a1f2e3d.png";
-import brightHealthLogo from "figma:asset/9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e.png";
-import molinaLogo from "figma:asset/8d8b0e168f0f9c7fdfbef5cd217b1605ced1e4dd.png";
-import kaiserLogo from "figma:asset/247821331f9da6b803fb1c4681e89dde97398f66.png";
-import healthNetLogo from "figma:asset/d194410a51e92fd00b864ecc9ee93d448b45bacd.png";
 import {
   Shield,
   Users,
@@ -219,26 +202,26 @@ export function HomePage({ onNavigate }: HomePageProps) {
         />
 
         {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2C4A7C]/5 via-transparent to-[#5A9F3F]/5"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-[#2C4A7C]/5 via-transparent to-[#5A9F3F]/5"></div>
 
         {/* Decorative shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Large shapes behind text - center */}
-          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#2C4A7C]/[0.03]"></div>
-          <div className="absolute top-32 left-1/2 translate-x-12 w-80 h-80 rounded-full bg-[#5A9F3F]/[0.025]"></div>
-          <div className="absolute top-48 left-1/2 -translate-x-40 w-64 h-64 bg-[#C9A227]/[0.02] rotate-45"></div>
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#2C4A7C]/3"></div>
+          <div className="absolute top-32 left-1/2 translate-x-12 w-80 h-80 rounded-full bg-[#5A9F3F]/2.5"></div>
+          <div className="absolute top-48 left-1/2 -translate-x-40 w-64 h-64 bg-[#C9A227]/2 rotate-45"></div>
 
           {/* Medium shapes */}
-          <div className="absolute top-16 left-1/4 w-48 h-48 rounded-full bg-[#2B2E4A]/[0.03]"></div>
-          <div className="absolute top-24 right-1/4 w-56 h-56 bg-[#2C4A7C]/[0.025] -rotate-12"></div>
+          <div className="absolute top-16 left-1/4 w-48 h-48 rounded-full bg-[#2B2E4A]/3"></div>
+          <div className="absolute top-24 right-1/4 w-56 h-56 bg-[#2C4A7C]/2.5 -rotate-12"></div>
 
           {/* Small accent shapes - edges */}
-          <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-[#2C4A7C]/[0.04]"></div>
-          <div className="absolute top-32 right-16 w-32 h-32 rounded-full bg-[#5A9F3F]/[0.05]"></div>
-          <div className="absolute top-64 left-32 w-24 h-24 rounded-full bg-[#C9A227]/[0.04]"></div>
-          <div className="absolute bottom-40 right-40 w-28 h-28 bg-[#2B2E4A]/[0.03] rotate-12"></div>
-          <div className="absolute bottom-24 left-16 w-20 h-20 bg-[#2C4A7C]/[0.04] rotate-45"></div>
-          <div className="absolute top-1/2 right-24 w-16 h-16 rounded-full bg-[#5A9F3F]/[0.04]"></div>
+          <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-[#2C4A7C]/4"></div>
+          <div className="absolute top-32 right-16 w-32 h-32 rounded-full bg-[#5A9F3F]/5"></div>
+          <div className="absolute top-64 left-32 w-24 h-24 rounded-full bg-[#C9A227]/4"></div>
+          <div className="absolute bottom-40 right-40 w-28 h-28 rounded-full bg-[#2B2E4A]/3 rotate-12"></div>
+          <div className="absolute bottom-24 left-16 w-20 h-20 rounded-full bg-[#2C4A7C]/4 rotate-45"></div>
+          <div className="absolute top-1/2 right-24 w-16 h-16 rounded-full bg-[#5A9F3F]/4"></div>
         </div>
 
         {/* Thin company carousel */}
@@ -254,240 +237,124 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="relative overflow-hidden">
             <div className="flex animate-scroll">
               {/* First set of logos */}
-              <div className="flex items-center gap-12 px-4 whitespace-nowrap flex-shrink-0">
+              <div className="flex items-center gap-12 px-4 whitespace-nowrap shrink-0">
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={aetnaLogo}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Aetna_logo.svg/2560px-Aetna_logo.svg.png"
+                    }
                     alt="Aetna"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={cignaLogo}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://1000logos.net/wp-content/uploads/2020/07/Cigna-Logo.png"
+                    }
                     alt="Cigna"
                     className="h-10 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={anthemLogo}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://logos-world.net/wp-content/uploads/2021/02/Anthem-Inc.-Logo.png"
+                    }
                     alt="Anthem"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={unitedHealthcareLogo}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/UnitedHealthcare_%28logo%29.svg/2560px-UnitedHealthcare_%28logo%29.svg.png"
+                    }
                     alt="United Healthcare"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={image_7ef82c84805ea004958c1025e48dc07a0cbf743c}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://trueliferecovery.com/wp-content/uploads/2023/04/BCBS-scaled.webp"
+                    }
                     alt="Blue Cross Blue Shield"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={image_a3c4484a3ff39e44e9a0a192415c13a1d9bb21ae}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://cdn.prod.website-files.com/5cd06573f0a28dce76ef883f/5d5c3a69ee289046030db55b_logo-wellcare.png"
+                    }
                     alt="WellCare"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={image_5fbb5aae366a85cc612e2bea7c255384185cc87e}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://s3.amazonaws.com/healthsherpa_photos/whitelabels/logo_images/000/037/693/original/AmbetterHeath_LogoTypeOnly_Small_RGB_tm.png?1666382717"
+                    }
                     alt="Ambetter"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={image_5053957a31d22f3266e44c1a849421b9934c470e}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://upload.wikimedia.org/wikipedia/en/1/1a/Bright_Health_logo_2021.png"
+                    }
                     alt="Bright Health"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={molinaLogo}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Molina_Healthcare_logo.svg/2560px-Molina_Healthcare_logo.svg.png"
+                    }
                     alt="Molina Healthcare"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={kaiserLogo}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://1000logos.net/wp-content/uploads/2020/09/Kaiser-Permanente-Logo.png"
+                    }
                     alt="Kaiser Permanente"
                     className="h-8 w-auto object-contain opacity-90"
                   />
                 </div>
                 <div className="h-12 px-6 flex items-center justify-center">
                   <Image
-                    src={healthNetLogo}
-                    alt="Health Net"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-              </div>
-              {/* Second set for seamless loop */}
-              <div className="flex items-center gap-12 px-4 whitespace-nowrap flex-shrink-0">
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={aetnaLogo}
-                    alt="Aetna"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={cignaLogo}
-                    alt="Cigna"
-                    className="h-10 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={anthemLogo}
-                    alt="Anthem"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={unitedHealthcareLogo}
-                    alt="United Healthcare"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={blueCrossLogo}
-                    alt="Blue Cross Blue Shield"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={wellCareLogo}
-                    alt="WellCare"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={ambetterLogo}
-                    alt="Ambetter"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={brightHealthLogo}
-                    alt="Bright Health"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={molinaLogo}
-                    alt="Molina Healthcare"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={kaiserLogo}
-                    alt="Kaiser Permanente"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={healthNetLogo}
-                    alt="Health Net"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-              </div>
-              {/* Third set for seamless loop */}
-              <div className="flex items-center gap-12 px-4 whitespace-nowrap flex-shrink-0">
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={aetnaLogo}
-                    alt="Aetna"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={cignaLogo}
-                    alt="Cigna"
-                    className="h-10 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={anthemLogo}
-                    alt="Anthem"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={unitedHealthcareLogo}
-                    alt="United Healthcare"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={blueCrossLogo}
-                    alt="Blue Cross Blue Shield"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={wellCareLogo}
-                    alt="WellCare"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={ambetterLogo}
-                    alt="Ambetter"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={brightHealthLogo}
-                    alt="Bright Health"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={molinaLogo}
-                    alt="Molina Healthcare"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={kaiserLogo}
-                    alt="Kaiser Permanente"
-                    className="h-8 w-auto object-contain opacity-90"
-                  />
-                </div>
-                <div className="h-12 px-6 flex items-center justify-center">
-                  <Image
-                    src={healthNetLogo}
+                    width={120}
+                    height={40}
+                    src={
+                      "https://upload.wikimedia.org/wikipedia/en/a/a0/Health_Net_logo.png"
+                    }
                     alt="Health Net"
                     className="h-8 w-auto object-contain opacity-90"
                   />
@@ -537,14 +404,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {/* Right side - CTA card with background shape */}
               <div className="relative max-w-md ml-auto">
                 {/* Darker shape behind card */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-[#2C4A7C]/[0.12] to-[#5A9F3F]/[0.10] rounded-3xl -rotate-3"></div>
+                <div className="absolute -inset-4 bg-linear-to-br from-[#2C4A7C]/12 to-[#5A9F3F]/10 rounded-3xl -rotate-3"></div>
 
                 {/* Glass-like card */}
-                <div className="relative bg-gradient-to-br from-white/80 via-white/70 to-white/60 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/50 overflow-hidden">
+                <div className="relative bg-linear-to-br from-white/80 via-white/70 to-white/60 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/50 overflow-hidden">
                   {/* Glossy highlight overlay - liquid glass effect */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
-                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 via-white/10 to-transparent"></div>
-                    <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-br from-white/30 via-transparent to-transparent"></div>
+                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-linear-to-b from-white/40 via-white/10 to-transparent"></div>
+                    <div className="absolute top-0 left-0 w-full h-20 bg-linear-to-br from-white/30 via-transparent to-transparent"></div>
                   </div>
 
                   {/* Content - positioned above glossy overlay */}
@@ -599,7 +466,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {/* First image */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg h-[280px]">
                 <ImageWithFallback
-                  src={image_36dc3f7ba5f0f3990ae677ff978059b5185e7f3e}
+                  src={
+                    "https://thumbs.dreamstime.com/b/doctor-conducts-senior-patient-consultation-bright-modern-office-emphasizing-health-wellness-calm-setting-404777682.jpg"
+                  }
                   alt="Bright medical office consultation"
                   className="w-full h-full object-cover"
                 />
@@ -608,7 +477,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {/* Second image - spans 2 columns */}
               <div className="md:col-span-2 relative rounded-2xl overflow-hidden shadow-lg h-[280px]">
                 <ImageWithFallback
-                  src={image_c9a78abffa3a363c8009626ef067abc60ea343a5}
+                  src={
+                    "https://millenniummedicalcare.com/blog/3-reasons-to-consult-internal-medicine-providers/"
+                  }
                   alt="Female doctor consulting patient in clinic"
                   className="w-full h-full object-cover"
                 />
@@ -617,7 +488,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {/* Third image */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg h-[280px]">
                 <ImageWithFallback
-                  src={image_a93b98454ff6a992c83fbfc94eeb62c22f6c2fb6}
+                  src={
+                    "https://as2.ftcdn.net/jpg/02/24/17/35/1000_F_224173510_jJ2FwQhT8c2BUDGdCfjrE3JkXEDW1t9b.jpg"
+                  }
                   alt="Modern healthcare consultation in bright office"
                   className="w-full h-full object-cover"
                 />
@@ -636,7 +509,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#5A9F3F] to-[#2C4A7C] text-white rounded-full mb-4 shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-[#5A9F3F] to-[#2C4A7C] text-white rounded-full mb-4 shadow-lg">
                   <benefit.icon className="w-8 h-8" />
                 </div>
                 <h3 className="mb-2">{benefit.title}</h3>
@@ -674,7 +547,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                         alt={industry.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                      <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent flex items-end">
                         <div className="p-4 w-full">
                           <div className="text-white mb-2">
                             <IconComponent className="w-8 h-8" />
@@ -739,7 +612,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <ul className="space-y-4">
                 {whyChoosePoints.map((point, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                     <span className="text-foreground">{point}</span>
                   </li>
                 ))}
@@ -753,7 +626,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <div className="relative">
               <div className="relative rounded-lg overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src={image_a93b98454ff6a992c83fbfc94eeb62c22f6c2fb6}
+                  src={
+                    "https://bradfordjacobs.com/wp-content/uploads/2023/06/Business-Consulting-Services.png"
+                  }
                   alt="Business consultation"
                   className="w-full h-auto"
                 />
@@ -773,7 +648,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#2B2E4A] via-[#2C4A7C] to-[#5A9F3F] text-white">
+      <section className="py-16 bg-linear-to-r from-[#2B2E4A] via-[#2C4A7C] to-[#5A9F3F] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-4">Ready to Save on Your Insurance?</h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">

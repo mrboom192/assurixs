@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/button";
-import logo from "figma:asset/8ec06bd4494a0c44549402698ea5f369124bb1f3.png";
+import logo from "@/../public/logo.png";
+import Image from "next/image";
 
 interface HeaderProps {
   currentPage: string;
@@ -54,7 +55,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             onClick={() => handleNavClick("home")}
             className="flex items-center"
           >
-            <img
+            <Image
               src={logo}
               alt="Assurix Insurance Services"
               className="h-10 md:h-12 w-auto"
