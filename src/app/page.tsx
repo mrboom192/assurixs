@@ -68,9 +68,9 @@ function App() {
   return (
     <>
       <AnimatedBackground />
-      <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#2C4A7C]/[0.02] via-white to-[#5A9F3F]/[0.03] relative z-10">
+      <div className="flex flex-col min-h-screen bg-linear-to-br from-[#2C4A7C]/2 via-white to-[#5A9F3F]/3 relative z-10">
         <Header currentPage={currentPage} onNavigate={handleNavigate} />
-        <main className="flex-grow">
+        <main className="grow">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentPage}
