@@ -21,31 +21,22 @@ export const InsuranceCarriers: CollectionConfig = {
   fields: [
     {
       name: 'name',
+      label: 'Company name',
       type: 'text',
       required: true,
     },
     {
       name: 'alt',
       type: 'text',
+      label: 'Alt text for logo',
       //required: true,
     },
+    {
+      name: 'logo',
+      label: 'Company logo',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
   ],
-  upload: {
-    // Upload to the public/media directory in Next.js making them publicly accessible even outside of Payload
-    staticDir: path.resolve(dirname, '../../public/media'),
-    adminThumbnail: 'thumbnail',
-    focalPoint: false,
-    imageSizes: [
-      {
-        name: 'Thumbnail',
-        width: 300,
-      },
-      {
-        name: 'og',
-        width: 1200,
-        height: 630,
-        crop: 'center',
-      },
-    ],
-  },
 }

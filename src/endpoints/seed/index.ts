@@ -19,6 +19,7 @@ const collections: CollectionSlug[] = [
   'forms',
   'form-submissions',
   'search',
+  'services',
 ]
 
 const globals: GlobalSlug[] = ['header', 'footer']
@@ -107,6 +108,8 @@ export const seed = async ({
       }),
     ),
   )
+
+  // Add in insurance company logos
 
   const [demoAuthor, image1Doc, image2Doc, image3Doc, imageHomeDoc] = await Promise.all([
     payload.create({
