@@ -739,6 +739,7 @@ export interface InsuranceCarrier {
   id: number;
   name: string;
   logo: number | Media;
+  website?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -4234,6 +4235,7 @@ export interface UsersSelect<T extends boolean = true> {
 export interface InsuranceCarriersSelect<T extends boolean = true> {
   name?: T;
   logo?: T;
+  website?: T;
   updatedAt?: T;
   createdAt?: T;
 }

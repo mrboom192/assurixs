@@ -32,5 +32,11 @@ export const InsuranceCarriers: CollectionConfig = {
       relationTo: 'media',
       required: true,
     },
+    {
+      name: 'website',
+      label: 'Company website',
+      type: 'text',
+      required: false,
+    },
   ],
 }

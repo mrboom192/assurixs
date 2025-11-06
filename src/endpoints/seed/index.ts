@@ -12,6 +12,7 @@ import { post3 } from './post-3'
 import { servicesSeedData } from './services'
 import path from 'path'
 import fs from 'fs'
+import { createInsuranceCarriers } from './create-insurance-carriers'
 
 const collections: CollectionSlug[] = [
   'categories',
@@ -64,8 +65,6 @@ export const seed = async ({
   }
 
   payload.logger.info(`— Clearing collections and globals...`)
-
-  // clear the database
   await Promise.all(
     globals.map((global) =>
       payload.updateGlobal({
@@ -78,11 +77,11 @@ export const seed = async ({
       }),
     ),
   )
-
+  // Make sure we delete insurance carriers first due to relations
+  await payload.db.deleteMany({ collection: 'insurance-carriers', req, where: {} })
   await Promise.all(
     collections.map((collection) => payload.db.deleteMany({ collection, req, where: {} })),
   )
-
   await Promise.all(
     collections
       .filter((collection) => Boolean(payload.collections[collection].config.versions))
@@ -90,7 +89,6 @@ export const seed = async ({
   )
 
   payload.logger.info(`— Seeding demo author and user...`)
-
   await payload.delete({
     collection: 'users',
     depth: 0,
@@ -101,7 +99,6 @@ export const seed = async ({
     },
   })
 
-  // Create default services
   payload.logger.info(`— Seeding services...`)
   await Promise.all(
     servicesSeedData.map((service) =>
@@ -112,10 +109,9 @@ export const seed = async ({
     ),
   )
 
-  // Create company logos
+  await createInsuranceCarriers({ payload, req })
 
   payload.logger.info(`— Seeding media...`)
-
   const [image1Buffer, image2Buffer, image3Buffer, hero1Buffer] = await Promise.all([
     fetchFileByURL(
       'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post1.webp',
@@ -130,7 +126,6 @@ export const seed = async ({
       'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp',
     ),
   ])
-
   const [demoAuthor, image1Doc, image2Doc, image3Doc, imageHomeDoc] = await Promise.all([
     payload.create({
       collection: 'users',
@@ -171,10 +166,9 @@ export const seed = async ({
     ),
   ])
 
-  payload.logger.info(`— Seeding posts...`)
-
   // Do not create posts with `Promise.all` because we want the posts to be created in order
   // This way we can sort them by `createdAt` or `publishedAt` and they will be in the expected order
+  payload.logger.info(`— Seeding posts...`)
   const post1Doc = await payload.create({
     collection: 'posts',
     depth: 0,
@@ -183,7 +177,6 @@ export const seed = async ({
     },
     data: post1({ heroImage: image1Doc, blockImage: image2Doc, author: demoAuthor }),
   })
-
   const post2Doc = await payload.create({
     collection: 'posts',
     depth: 0,
