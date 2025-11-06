@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import ServicesGrid from '@/components/ServicesGrid'
 
 export default function ServicesPage() {
   const services = [
@@ -166,49 +167,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <Card
-                  key={index}
-                  className="border border-gray-200 hover:border-gray-900 transition-colors"
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-gray-900 text-white rounded flex items-center justify-center">
-                        <service.icon className="w-6 h-6" />
-                      </div>
-                    </div>
-                    <h3
-                      className="text-lg text-gray-900 mb-2"
-                      style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                    >
-                      {service.title}
-                    </h3>
-                    <p
-                      className="text-sm text-gray-600 mb-4 leading-relaxed"
-                      style={{ fontFamily: 'DM Sans', fontWeight: 400 }}
-                    >
-                      {service.description}
-                    </p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
-                      style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
-                    >
-                      Request Quote
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServicesGrid />
 
       {/* What Sets Us Apart */}
       <section className="py-20 bg-gray-50 border-t border-gray-200">
