@@ -9,6 +9,7 @@ import { imageHero1 } from './image-hero-1'
 import { post1 } from './post-1'
 import { post2 } from './post-2'
 import { post3 } from './post-3'
+import { servicesSeedData } from './services'
 
 const collections: CollectionSlug[] = [
   'categories',
@@ -20,7 +21,7 @@ const collections: CollectionSlug[] = [
   'search',
 ]
 
-const globals: GlobalSlug[] = ['header', 'footer', 'home']
+const globals: GlobalSlug[] = ['header', 'footer']
 
 const categories = ['Technology', 'News', 'Finance', 'Design', 'Software', 'Engineering']
 
@@ -48,9 +49,7 @@ export const seed = async ({
     globals.map((global) =>
       payload.updateGlobal({
         slug: global,
-        data: {
-          navItems: [],
-        },
+        data: {},
         depth: 0,
         context: {
           disableRevalidate: true,
@@ -97,6 +96,17 @@ export const seed = async ({
       'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp',
     ),
   ])
+
+  // Create default services
+  payload.logger.info(`— Seeding categories, media, and demo author...`)
+  await Promise.all(
+    servicesSeedData.map((service) =>
+      payload.create({
+        collection: 'services',
+        data: service,
+      }),
+    ),
+  )
 
   const [demoAuthor, image1Doc, image2Doc, image3Doc, imageHomeDoc] = await Promise.all([
     payload.create({

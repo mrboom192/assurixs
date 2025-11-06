@@ -19,6 +19,7 @@ import { getServerSideURL } from './utilities/getURL'
 import { InsuranceCarriers } from './collections/InsuranceCarriers'
 import { Home } from './Home/config'
 import { IndustriesServed } from './collections/IndustriesServed'
+import { Services } from './collections/Services'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -67,7 +68,16 @@ export default buildConfig({
       url: process.env.DATABASE_URI || '',
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users, InsuranceCarriers, IndustriesServed],
+  collections: [
+    Pages,
+    Posts,
+    Media,
+    Categories,
+    Users,
+    InsuranceCarriers,
+    IndustriesServed,
+    Services,
+  ],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Home],
   plugins: [
