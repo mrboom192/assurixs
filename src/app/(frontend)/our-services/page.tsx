@@ -1,114 +1,9 @@
-import { useState } from 'react'
-import {
-  Briefcase,
-  Building,
-  HeartPulse,
-  Users,
-  UtensilsCrossed,
-  Check,
-  ArrowRight,
-  Shield,
-  Phone,
-  TrendingDown,
-  Home,
-  UserCheck,
-  Heart,
-  FileText,
-  Lock,
-  DollarSign,
-  UserX,
-} from 'lucide-react'
+import { ArrowRight, Shield, Phone } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import ServicesGrid from '@/components/ServicesGrid'
 
 export default function ServicesPage() {
-  const services = [
-    {
-      icon: Briefcase,
-      title: 'Workers Compensation',
-      description:
-        'Comprehensive coverage for California businesses with competitive rates and flexible payment options.',
-    },
-    {
-      icon: Shield,
-      title: 'General Liability',
-      description:
-        'Protection against third-party claims for bodily injury, property damage, and advertising injury.',
-    },
-    {
-      icon: Home,
-      title: 'Property Insurance',
-      description:
-        'Coverage for your business property, equipment, and inventory against damage and loss.',
-    },
-    {
-      icon: UserCheck,
-      title: 'Group or Individual Disability',
-      description:
-        'Income protection for employees or individuals unable to work due to illness or injury.',
-    },
-    {
-      icon: Heart,
-      title: 'Life Insurance',
-      description:
-        'Financial security for your loved ones and key person protection for your business.',
-    },
-    {
-      icon: Users,
-      title: 'Group Employee Benefits',
-      description:
-        'Competitive benefit packages including health, dental, vision, and retirement plans.',
-    },
-    {
-      icon: FileText,
-      title: 'Professional Liability',
-      description: 'Errors and omissions coverage for professional services and advice.',
-    },
-    {
-      icon: HeartPulse,
-      title: 'Dental Malpractice',
-      description:
-        'Specialized professional liability coverage for dental practitioners and practices.',
-    },
-    {
-      icon: HeartPulse,
-      title: 'Medical Malpractice',
-      description:
-        'Comprehensive professional liability protection for physicians and medical facilities.',
-    },
-    {
-      icon: UserX,
-      title: 'Employment Practice Liability',
-      description:
-        'Protection against claims of discrimination, harassment, wrongful termination, and more.',
-    },
-    {
-      icon: Lock,
-      title: 'Cyber Liability',
-      description:
-        'Coverage for data breaches, cyber attacks, and privacy liability in the digital age.',
-    },
-    {
-      icon: DollarSign,
-      title: 'Billing E&O',
-      description:
-        'Errors and omissions coverage specifically for medical billing companies and professionals.',
-    },
-    {
-      icon: FileText,
-      title: 'E&O Coverage',
-      description:
-        'Professional liability protection for errors, omissions, and negligence in your services.',
-    },
-    {
-      icon: Building,
-      title: 'Directors & Officers',
-      description:
-        'Liability protection for company directors and officers against lawsuits and legal claims.',
-    },
-  ]
-
   const differentiators = [
     {
       title: 'Dedicated Partnership',
@@ -229,7 +124,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 // onClick={() => onNavigate('contact')}
-                className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6 h-auto"
+                className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6"
                 style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
               >
                 Request Quote
@@ -237,7 +132,7 @@ export default function ServicesPage() {
               </Button>
               <Button
                 variant="outline"
-                className="border-gray-300 text-gray-900 hover:bg-gray-50 px-8 py-6 h-auto"
+                className="border-gray-300 text-gray-900 hover:bg-gray-50 px-8 py-6"
                 style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
               >
                 <Phone className="mr-2 w-4 h-4" />

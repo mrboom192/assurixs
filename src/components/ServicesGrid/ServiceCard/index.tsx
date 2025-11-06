@@ -30,7 +30,7 @@ export default function ServiceCard({ service }: { service: Service }) {
         <Button
           variant="outline"
           size="sm"
-          className="w-full border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
+          className="w-full border-gray-900 text-gray-900 hover:opacity-50"
           style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
         >
           Request Quote

@@ -16,10 +16,11 @@ import { Header } from './Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
-import { InsuranceCarriers } from './collections/InsuranceCarriers'
+import { InsuranceCarrier } from './collections/InsuranceCarrier'
 import { Home } from './Home/config'
 import { IndustriesServed } from './collections/IndustriesServed'
 import { Services } from './collections/Services'
+import { IndustryCategory } from './collections/IndustryCategory'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -74,7 +75,8 @@ export default buildConfig({
     Media,
     Categories,
     Users,
-    InsuranceCarriers,
+    InsuranceCarrier,
+    IndustryCategory,
     IndustriesServed,
     Services,
   ],

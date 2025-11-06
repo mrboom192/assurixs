@@ -5,7 +5,9 @@ import ServiceCard from './ServiceCard'
 export default async function ServicesGrid() {
   const payload = await getPayload({ config })
 
-  const services = await payload.find({ collection: 'services' }).then((res) => res.docs)
+  const services = await payload
+    .find({ collection: 'services', pagination: false })
+    .then((res) => res.docs)
 
   return (
     <section className="py-20 bg-white">

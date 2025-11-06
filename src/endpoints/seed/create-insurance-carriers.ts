@@ -73,7 +73,7 @@ export const createInsuranceCarriers = async ({
 
     // Create the insurance carrier, linking to that media
     await payload.create({
-      collection: 'insurance-carriers',
+      collection: 'insurance-carrier',
       context: { disableRevalidate: true },
       data: {
         name: carrier.name,

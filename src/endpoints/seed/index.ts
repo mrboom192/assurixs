@@ -13,6 +13,8 @@ import { servicesSeedData } from './services'
 import path from 'path'
 import fs from 'fs'
 import { createInsuranceCarriers } from './create-insurance-carriers'
+import { createIndustryCategories } from './create-industry-category'
+import { createServicedIndustries } from './create-serviced-industry'
 
 const collections: CollectionSlug[] = [
   'categories',
@@ -78,7 +80,8 @@ export const seed = async ({
     ),
   )
   // Make sure we delete insurance carriers first due to relations
-  await payload.db.deleteMany({ collection: 'insurance-carriers', req, where: {} })
+  await payload.db.deleteMany({ collection: 'insurance-carrier', req, where: {} })
+  await payload.db.deleteMany({ collection: 'industries-served', req, where: {} })
   await Promise.all(
     collections.map((collection) => payload.db.deleteMany({ collection, req, where: {} })),
   )
@@ -110,6 +113,8 @@ export const seed = async ({
   )
 
   await createInsuranceCarriers({ payload, req })
+  const categoryIds = await createIndustryCategories({ payload, req })
+  await createServicedIndustries({ payload, req, categoryIds })
 
   payload.logger.info(`— Seeding media...`)
   const [image1Buffer, image2Buffer, image3Buffer, hero1Buffer] = await Promise.all([

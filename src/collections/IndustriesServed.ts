@@ -1,10 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
-import { icons } from 'lucide-react'
-
-// A bunch of lucide icons
-const options = icons
+import tags from 'lucide-static/tags.json'
 
 export const IndustriesServed: CollectionConfig = {
   slug: 'industries-served',
@@ -18,6 +15,9 @@ export const IndustriesServed: CollectionConfig = {
     delete: authenticated,
     read: anyone,
     update: authenticated,
+  },
+  admin: {
+    useAsTitle: 'name',
   },
   fields: [
     {
@@ -37,7 +37,7 @@ export const IndustriesServed: CollectionConfig = {
       label:
         'Choose an icon to represent this industry. You can preview icons at https://lucide.dev/icons',
       type: 'select',
-      options: Object.keys(options).map((key) => key),
+      options: Object.keys(tags),
       required: true,
     },
     {
@@ -61,6 +61,13 @@ export const IndustriesServed: CollectionConfig = {
           required: true,
         },
       ],
+    },
+    {
+      name: 'category',
+      label: 'Industry Category',
+      type: 'relationship',
+      relationTo: 'industry-category',
+      required: true,
     },
   ],
 }
