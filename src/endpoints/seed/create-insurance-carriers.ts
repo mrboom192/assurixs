@@ -38,7 +38,7 @@ const carriers = [
     file: 'the-doctors-company.png',
     website: 'https://www.thedoctors.com/',
   },
-  { name: 'the-hartford', file: 'the-hartford.png', website: 'https://www.thehartford.com/' },
+  { name: 'The Hartford', file: 'the-hartford.png', website: 'https://www.thehartford.com/' },
   { name: 'Travelers', file: 'travelers.png', website: 'https://www.travelers.com/' },
 ]
 
