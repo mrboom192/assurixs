@@ -26,12 +26,6 @@ export const InsuranceCarriers: CollectionConfig = {
       required: true,
     },
     {
-      name: 'alt',
-      type: 'text',
-      label: 'Alt text for logo',
-      //required: true,
-    },
-    {
       name: 'logo',
       label: 'Company logo',
       type: 'upload',

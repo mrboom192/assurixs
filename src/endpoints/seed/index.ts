@@ -10,6 +10,8 @@ import { post1 } from './post-1'
 import { post2 } from './post-2'
 import { post3 } from './post-3'
 import { servicesSeedData } from './services'
+import path from 'path'
+import fs from 'fs'
 
 const collections: CollectionSlug[] = [
   'categories',
@@ -43,6 +45,24 @@ export const seed = async ({
   // as well as the collections and globals
   // this is because while `yarn seed` drops the database
   // the custom `/api/seed` endpoint does not
+  payload.logger.info(`— Clearing media files...`)
+  const mediaDir = path.resolve(process.cwd(), 'public/media')
+
+  if (fs.existsSync(mediaDir)) {
+    const files = fs.readdirSync(mediaDir)
+    for (const file of files) {
+      const filePath = path.join(mediaDir, file)
+      try {
+        fs.unlinkSync(filePath)
+      } catch (err) {
+        payload.logger.error(`Failed to delete ${filePath}: ${(err as Error).message}`)
+      }
+    }
+    payload.logger.info(`— Cleared ${files.length} files from ${mediaDir}`)
+  } else {
+    payload.logger.warn(`— Media directory not found: ${mediaDir}`)
+  }
+
   payload.logger.info(`— Clearing collections and globals...`)
 
   // clear the database
@@ -81,6 +101,19 @@ export const seed = async ({
     },
   })
 
+  // Create default services
+  payload.logger.info(`— Seeding services...`)
+  await Promise.all(
+    servicesSeedData.map((service) =>
+      payload.create({
+        collection: 'services',
+        data: service,
+      }),
+    ),
+  )
+
+  // Create company logos
+
   payload.logger.info(`— Seeding media...`)
 
   const [image1Buffer, image2Buffer, image3Buffer, hero1Buffer] = await Promise.all([
@@ -97,19 +130,6 @@ export const seed = async ({
       'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp',
     ),
   ])
-
-  // Create default services
-  payload.logger.info(`— Seeding categories, media, and demo author...`)
-  await Promise.all(
-    servicesSeedData.map((service) =>
-      payload.create({
-        collection: 'services',
-        data: service,
-      }),
-    ),
-  )
-
-  // Add in insurance company logos
 
   const [demoAuthor, image1Doc, image2Doc, image3Doc, imageHomeDoc] = await Promise.all([
     payload.create({
