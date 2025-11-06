@@ -15,15 +15,18 @@ export const CarrierCarouselClient: React.FC<CarrierCarouselClientProps> = ({ da
 
   return (
     <div className="overflow-hidden" ref={emblaRef}>
-      <div className="flex">
-        {data.map((slide, index) => (
-          <div className="flex-none basis-full min-w-0" key={index}>
+      <div className="flex flex-row items-center">
+        {data.map((slide) => (
+          <div
+            className="flex-none basis-full min-w-0 max-w-lg opacity-70 hover:opacity-100 transition-opacity"
+            key={slide.id}
+          >
             <Image
               src={slide.url || ''}
               alt={slide.name}
               width={200}
               height={100}
-              className="object-contain"
+              objectFit="contain"
             />
           </div>
         ))}
