@@ -7,8 +7,9 @@ export async function CarrierCarousel() {
   const payload = await getPayload({ config })
 
   const result = await payload.find({
-    collection: 'insurance-carriers',
+    collection: 'insurance-carrier',
     pagination: false,
+    depth: 1,
   })
 
   return <CarrierCarouselClient data={result.docs || []} />

@@ -1,4 +1,4 @@
-import { Category, IndustryCategory } from '@/payload-types'
+import { IndustryCategory } from '@/payload-types'
 import { CheckCircle2 } from 'lucide-react'
 
 export default function IndustryFilterBar({

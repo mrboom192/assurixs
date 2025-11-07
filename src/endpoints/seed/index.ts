@@ -8,17 +8,14 @@ import { createIndustryCategories } from './create-industry-category'
 import { createServicedIndustries } from './create-serviced-industry'
 
 const collections: CollectionSlug[] = [
-  'categories',
+  'insurance-carrier',
+  'industries-served',
+  'services',
   'media',
-  'pages',
-  'posts',
-  'forms',
-  'form-submissions',
-  'search',
   'services',
 ]
 
-const globals: GlobalSlug[] = ['header', 'footer']
+// const globals: GlobalSlug[] = ['home']
 
 // Next.js revalidation errors are normal when seeding the database without a server running
 // i.e. running `yarn seed` locally instead of using the admin UI within an active app
@@ -56,21 +53,18 @@ export const seed = async ({
   }
 
   payload.logger.info(`— Clearing collections and globals...`)
-  await Promise.all(
-    globals.map((global) =>
-      payload.updateGlobal({
-        slug: global,
-        data: {},
-        depth: 0,
-        context: {
-          disableRevalidate: true,
-        },
-      }),
-    ),
-  )
-  // Make sure we delete insurance carriers first due to relations
-  await payload.db.deleteMany({ collection: 'insurance-carrier', req, where: {} })
-  await payload.db.deleteMany({ collection: 'industries-served', req, where: {} })
+  // await Promise.all(
+  //   globals.map((global) =>
+  //     payload.updateGlobal({
+  //       slug: global,
+  //       data: {},
+  //       depth: 0,
+  //       context: {
+  //         disableRevalidate: true,
+  //       },
+  //     }),
+  //   ),
+  // )
   await Promise.all(
     collections.map((collection) => payload.db.deleteMany({ collection, req, where: {} })),
   )

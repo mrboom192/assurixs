@@ -3,7 +3,6 @@ import {
   TrendingDown,
   Users,
   Clock,
-  CheckCircle2,
   Stethoscope,
   Award,
   Pill,
@@ -13,24 +12,22 @@ import {
   Hospital,
   Smartphone,
   Umbrella,
-  Building2,
   Heart,
-  ChevronDown,
-  ChevronUp,
   ArrowRight,
   Check,
   UtensilsCrossed,
   Scale,
   Building,
   Home,
-  Briefcase,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import image_a93b98454ff6a992c83fbfc94eeb62c22f6c2fb6 from 'figma:asset/a93b98454ff6a992c83fbfc94eeb62c22f6c2fb6.png'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { Media } from '@/payload-types'
-// import { CarrierCarousel } from '@/components/CarrierCarousel/Component'
+import { CarrierCarousel } from '@/components/CarrierCarousel/Component'
+import Image from 'next/image'
+import Link from 'next/link'
+import { HomeIndustriesGrid } from '@/components/HomeIndustriesGrid'
 
 export async function HomePage() {
   const payload = await getPayload({ config })
@@ -198,7 +195,7 @@ export async function HomePage() {
               >
                 Trusted A-Rated Insurance Carriers
               </p>
-              {/* <CarrierCarousel /> */}
+              <CarrierCarousel />
             </div>
 
             {/* Hero Heading - Full Width */}
@@ -226,14 +223,15 @@ export async function HomePage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                  <Button
-                    // onClick={() => onNavigate('contact')}
-                    className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6 text-lg h-auto"
-                    style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                  >
-                    Get Your Quote
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6 text-lg h-auto"
+                      style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+                    >
+                      Get Your Quote
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
                   <Button
                     // onClick={() => onNavigate('about')}
                     variant="outline"
@@ -296,11 +294,11 @@ export async function HomePage() {
                 <div className="relative scale-105 lg:scale-110">
                   {/* Main hero image */}
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <img
-                      src={heroImage?.url || ''}
+                    {/* <img
+                      src={heroImage?.url || null}
                       alt={heroImage?.alt || ''}
                       className="w-full h-auto object-cover"
-                    />
+                    /> */}
                   </div>
 
                   {/* Floating badge - 30+ Years - Bottom Left */}
@@ -392,46 +390,7 @@ export async function HomePage() {
       </section>
 
       {/* Industries We Serve */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2
-                className="text-3xl md:text-4xl mb-4 text-gray-900"
-                style={{ fontFamily: 'DM Sans', fontWeight: 700 }}
-              >
-                Industries we serve
-              </h2>
-              <p
-                className="text-xl text-gray-600 max-w-2xl mx-auto"
-                style={{ fontFamily: 'DM Sans', fontWeight: 400 }}
-              >
-                Specialized expertise across healthcare and beyond
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-              {industries.map((industry, index) => (
-                <button
-                  key={index}
-                  // onClick={() => onNavigate('industries')}
-                  className="group p-6 bg-white border border-gray-200 rounded-lg hover:border-gray-900 hover:shadow-md transition-all text-left"
-                >
-                  <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mb-3 group-hover:bg-gray-900 transition-colors">
-                    <industry.icon className="w-5 h-5 text-gray-700 group-hover:text-white transition-colors" />
-                  </div>
-                  <h3
-                    className="text-sm text-gray-900 mb-1"
-                    style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                  >
-                    {industry.name}
-                  </h3>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeIndustriesGrid />
 
       {/* Why Choose Section */}
       <section className="py-24 bg-gray-50">
@@ -440,11 +399,13 @@ export async function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Image */}
               <div className="order-2 lg:order-1">
-                {/* <img
-                  src={image_a93b98454ff6a992c83fbfc94eeb62c22f6c2fb6}
+                <Image
+                  src="/holding_hands.jpg"
                   alt="Assurixs Team"
-                  className="w-full h-auto rounded-lg shadow-xl"
-                /> */}
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-xl"
+                />
               </div>
 
               {/* Content */}
@@ -479,14 +440,15 @@ export async function HomePage() {
                   ))}
                 </div>
 
-                <Button
-                  // onClick={() => onNavigate('about')}
-                  className="bg-gray-900 text-white hover:bg-gray-800 px-6 py-6 h-auto"
-                  style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                >
-                  Learn About Us
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Link href="/about">
+                  <Button
+                    className="bg-gray-900 text-white hover:bg-gray-800 px-6 py-6 h-auto"
+                    style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+                  >
+                    Learn About Us
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -509,14 +471,15 @@ export async function HomePage() {
             >
               Get a personalized quote in as little as 24 hours
             </p>
-            <Button
-              // onClick={() => onNavigate('contact')}
-              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-lg h-auto"
-              style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-            >
-              Request Your Quote
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link href="/contact">
+              <Button
+                className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-lg h-auto"
+                style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+              >
+                Request Your Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

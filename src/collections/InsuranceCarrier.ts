@@ -7,10 +7,14 @@ import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
 
 const filename = fileURLToPath(import.meta.url)
-const dirname = path.dirname(filename)
 
 export const InsuranceCarrier: CollectionConfig = {
   slug: 'insurance-carrier',
+  admin: {
+    useAsTitle: 'name',
+    description:
+      'Insurance carriers we work with. Companies here will be displayed in the carrier carousel on the homepage and partially in the footer.',
+  },
   folders: false,
   access: {
     create: authenticated,
