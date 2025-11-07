@@ -2,10 +2,6 @@ import { Award, Target, Heart, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
-interface AboutPageProps {
-  onNavigate: (page: string) => void
-}
-
 export default function AboutPage() {
   const values = [
     {

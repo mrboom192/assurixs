@@ -21,6 +21,7 @@ import { Home } from './Home/config'
 import { IndustriesServed } from './collections/IndustriesServed'
 import { Services } from './collections/Services'
 import { IndustryCategory } from './collections/IndustryCategory'
+import { TeamMembers } from './collections/TeamMembers'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -39,28 +40,6 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     user: Users.slug,
-    livePreview: {
-      breakpoints: [
-        {
-          label: 'Mobile',
-          name: 'mobile',
-          width: 375,
-          height: 667,
-        },
-        {
-          label: 'Tablet',
-          name: 'tablet',
-          width: 768,
-          height: 1024,
-        },
-        {
-          label: 'Desktop',
-          name: 'desktop',
-          width: 1440,
-          height: 900,
-        },
-      ],
-    },
   },
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
@@ -70,15 +49,13 @@ export default buildConfig({
     },
   }),
   collections: [
-    Pages,
-    Posts,
     Media,
-    Categories,
     Users,
     InsuranceCarrier,
     IndustryCategory,
     IndustriesServed,
     Services,
+    TeamMembers,
   ],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Home],
