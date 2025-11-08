@@ -14,21 +14,6 @@ import { getClientSideURL } from '@/utilities/getURL'
 
 const baseClass = 'admin-bar'
 
-const collectionLabels = {
-  pages: {
-    plural: 'Pages',
-    singular: 'Page',
-  },
-  posts: {
-    plural: 'Posts',
-    singular: 'Post',
-  },
-  projects: {
-    plural: 'Projects',
-    singular: 'Project',
-  },
-}
-
 const Title: React.FC = () => <span>Dashboard</span>
 
 export const AdminBar: React.FC<{
@@ -37,9 +22,6 @@ export const AdminBar: React.FC<{
   const { adminBarProps } = props || {}
   const segments = useSelectedLayoutSegments()
   const [show, setShow] = useState(false)
-  const collection = (
-    collectionLabels[segments?.[1] as keyof typeof collectionLabels] ? segments[1] : 'pages'
-  ) as keyof typeof collectionLabels
   const router = useRouter()
 
   const onAuthChange = React.useCallback((user: PayloadMeUser) => {
@@ -63,11 +45,6 @@ export const AdminBar: React.FC<{
             user: 'text-white',
           }}
           cmsURL={getClientSideURL()}
-          collectionSlug={collection}
-          collectionLabels={{
-            plural: collectionLabels[collection]?.plural || 'Pages',
-            singular: collectionLabels[collection]?.singular || 'Page',
-          }}
           logo={<Title />}
           onAuthChange={onAuthChange}
           onPreviewExit={() => {

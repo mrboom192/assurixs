@@ -26,20 +26,20 @@ export default function AboutPage() {
     },
   ]
 
-  //   const team = [
-  //     {
-  //       name: 'Ahmad Oyoun',
-  //       role: 'President & Founder',
-  //       bio: 'As President and Founder of Assurix Insurance Services, Ahmad Oyoun brings over 30 years of experience in the insurance industry. Since beginning his career in 1993, Ahmad has built a reputation for his ability to strategically tailor insurance solutions that align with the unique needs of each client. With a strong foundation serving dental and healthcare professionals, Ahmad developed a deep understanding of complex risk management and specialized coverage design. His success in these industries became the foundation for a broader expertise—allowing him to effectively advise and protect clients across diverse sectors including professional services, retail operations, and commercial businesses. Since founding Assurix in 2019, Ahmad has led the company with a commitment to integrity, personalized service, and long-term client relationships. His leadership philosophy is built on understanding clients beyond their policies—focusing on the people, goals, and growth behind every business. Outside of work, Ahmad is passionate about mentorship, community involvement, and empowering the next generation of insurance professionals, ensuring the same standard of care and excellence carries forward into the future of the industry.',
-  //       image: ahmadPhoto,
-  //     },
-  //     {
-  //       name: 'Sallman Oyoun',
-  //       role: 'Vice President',
-  //       bio: "As Vice President of Assurix Insurance Services, Sallman Oyoun represents the next generation of leadership and innovation within the company. Since entering the insurance industry in 2022, Sallman has quickly developed a reputation for his strategic approach to client relations, business development, and modernizing operational processes within Assurix. Sallman earned his Bachelor of Science in Chemistry from Cal Poly Pomona in 2022, and later completed his Master of Business Administration (MBA) from California State University, Long Beach in the summer of 2025. His unique combination of analytical thinking and business insight allows him to bridge data-driven strategy with personalized client care—ensuring every solution aligns with both coverage needs and long-term financial goals. Under Sallman's leadership, Assurix continues to expand its reach and refine its client experience. His forward-thinking mindset, dedication to excellence, and passion for helping professionals protect what they've built reflect the very values on which Assurix was founded.",
-  //       image: sallmanPhoto,
-  //     },
-  //   ]
+  const team = [
+    {
+      name: 'Ahmad Oyoun',
+      role: 'President & Founder',
+      bio: 'As President and Founder of Assurix Insurance Services, Ahmad Oyoun brings over 30 years of experience in the insurance industry. Since beginning his career in 1993, Ahmad has built a reputation for his ability to strategically tailor insurance solutions that align with the unique needs of each client. With a strong foundation serving dental and healthcare professionals, Ahmad developed a deep understanding of complex risk management and specialized coverage design. His success in these industries became the foundation for a broader expertise—allowing him to effectively advise and protect clients across diverse sectors including professional services, retail operations, and commercial businesses. Since founding Assurix in 2019, Ahmad has led the company with a commitment to integrity, personalized service, and long-term client relationships. His leadership philosophy is built on understanding clients beyond their policies—focusing on the people, goals, and growth behind every business. Outside of work, Ahmad is passionate about mentorship, community involvement, and empowering the next generation of insurance professionals, ensuring the same standard of care and excellence carries forward into the future of the industry.',
+      image: '/ahmad.jpeg',
+    },
+    {
+      name: 'Sallman Oyoun',
+      role: 'Vice President',
+      bio: "As Vice President of Assurix Insurance Services, Sallman Oyoun represents the next generation of leadership and innovation within the company. Since entering the insurance industry in 2022, Sallman has quickly developed a reputation for his strategic approach to client relations, business development, and modernizing operational processes within Assurix. Sallman earned his Bachelor of Science in Chemistry from Cal Poly Pomona in 2022, and later completed his Master of Business Administration (MBA) from California State University, Long Beach in the summer of 2025. His unique combination of analytical thinking and business insight allows him to bridge data-driven strategy with personalized client care—ensuring every solution aligns with both coverage needs and long-term financial goals. Under Sallman's leadership, Assurix continues to expand its reach and refine its client experience. His forward-thinking mindset, dedication to excellence, and passion for helping professionals protect what they've built reflect the very values on which Assurix was founded.",
+      image: '/sallman.jpeg',
+    },
+  ]
 
   return (
     <div className="min-h-screen">
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="mb-6">Our Mission</h2>
@@ -124,7 +124,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => {
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="text-center bg-white border-gray-200 hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-6">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-900 text-white rounded-full mb-4 shadow-md">
                       <value.icon className="w-8 h-8" />
@@ -155,7 +158,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative h-96 lg:h-auto bg-gray-900">
                   <img
-                    // src={ahmadPhoto}
+                    src={'/ahmad.jpeg'}
                     alt="Ahmad Oyoun"
                     className="w-full h-full object-contain"
                   />
@@ -199,7 +202,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative h-96 lg:h-auto bg-gray-900 lg:order-2">
                   <img
-                    // src={sallmanPhoto}
+                    src="/sallman.jpeg"
                     alt="Sallman Oyoun"
                     className="w-full h-full object-contain"
                   />

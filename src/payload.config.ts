@@ -13,15 +13,20 @@ import { InsuranceCarrier } from './collections/InsuranceCarrier'
 import { IndustriesServed } from './collections/IndustriesServed'
 import { Services } from './collections/Services'
 import { IndustryCategory } from './collections/IndustryCategory'
-import { TeamMembers } from './collections/TeamMembers'
-import { Home } from './Home/config'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
   admin: {
+    meta: {
+      titleSuffix: '- Assurixs',
+    },
     components: {
+      graphics: {
+        Logo: '@/components/Logo',
+        Icon: '@/components/AdminIcon',
+      },
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below.
       beforeLogin: ['@/components/BeforeLogin'],
@@ -39,17 +44,8 @@ export default buildConfig({
       url: process.env.DATABASE_URI || '',
     },
   }),
-  collections: [
-    Media,
-    Users,
-    InsuranceCarrier,
-    IndustryCategory,
-    IndustriesServed,
-    Services,
-    TeamMembers,
-  ],
+  collections: [Media, Users, InsuranceCarrier, IndustryCategory, IndustriesServed, Services],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Home],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
   typescript: {

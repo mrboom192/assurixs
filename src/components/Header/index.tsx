@@ -6,8 +6,9 @@ import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { AdminBar } from '@/components/AdminBar'
 
-export function Header() {
+export function Header({ isAdminBarEnabled }: { isAdminBarEnabled?: boolean }) {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -42,6 +43,11 @@ export function Header() {
       }`}
     >
       {/* Top bar */}
+      <AdminBar
+        adminBarProps={{
+          preview: isAdminBarEnabled,
+        }}
+      />
       <div
         className={`transition-all duration-300 ${
           isScrolled

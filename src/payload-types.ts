@@ -73,7 +73,6 @@ export interface Config {
     'industry-category': IndustryCategory;
     'industries-served': IndustriesServed;
     services: Service;
-    'team-members': TeamMember;
     'payload-kv': PayloadKv;
     'payload-folders': FolderInterface;
     'payload-locked-documents': PayloadLockedDocument;
@@ -92,7 +91,6 @@ export interface Config {
     'industry-category': IndustryCategorySelect<false> | IndustryCategorySelect<true>;
     'industries-served': IndustriesServedSelect<false> | IndustriesServedSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
-    'team-members': TeamMembersSelect<false> | TeamMembersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-folders': PayloadFoldersSelect<false> | PayloadFoldersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -102,12 +100,8 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  globals: {
-    home: Home;
-  };
-  globalsSelect: {
-    home: HomeSelect<false> | HomeSelect<true>;
-  };
+  globals: {};
+  globalsSelect: {};
   locale: null;
   user: User & {
     collection: 'users';
@@ -3560,20 +3554,6 @@ export interface Service {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "team-members".
- */
-export interface TeamMember {
-  id: number;
-  name: string;
-  role: string;
-  biography: string;
-  photo: number | Media;
-  imageAlign?: ('left' | 'right') | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -3619,10 +3599,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'services';
         value: number | Service;
-      } | null)
-    | ({
-        relationTo: 'team-members';
-        value: number | TeamMember;
       } | null)
     | ({
         relationTo: 'payload-folders';
@@ -3788,19 +3764,6 @@ export interface ServicesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "team-members_select".
- */
-export interface TeamMembersSelect<T extends boolean = true> {
-  name?: T;
-  role?: T;
-  biography?: T;
-  photo?: T;
-  imageAlign?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -3850,30 +3813,6 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "home".
- */
-export interface Home {
-  id: number;
-  heroText: string;
-  heroSubtext: string;
-  heroImage: number | Media;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "home_select".
- */
-export interface HomeSelect<T extends boolean = true> {
-  heroText?: T;
-  heroSubtext?: T;
-  heroImage?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -101,7 +101,7 @@ export default function IndustriesGridClient({
 
                     <Button
                       variant="outline"
-                      className="w-full group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition-all"
+                      className="w-full border-gray-200 group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition-all"
                       style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
                     >
                       Get a Quote

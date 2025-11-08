@@ -1,146 +1,11 @@
-import {
-  Shield,
-  TrendingDown,
-  Users,
-  Clock,
-  Stethoscope,
-  Award,
-  Pill,
-  TestTube,
-  Siren,
-  Scissors,
-  Hospital,
-  Smartphone,
-  Umbrella,
-  Heart,
-  ArrowRight,
-  Check,
-  UtensilsCrossed,
-  Scale,
-  Building,
-  Home,
-} from 'lucide-react'
+import { Shield, TrendingDown, Users, Clock, ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { getPayload } from 'payload'
-import config from '@payload-config'
-import { Media } from '@/payload-types'
 import { CarrierCarousel } from '@/components/CarrierCarousel/Component'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HomeIndustriesGrid } from '@/components/HomeIndustriesGrid'
 
 export async function HomePage() {
-  const payload = await getPayload({ config })
-
-  const res = await payload.findGlobal({ slug: 'home' })
-
-  const { heroText, heroSubtext, heroImage } = res as {
-    heroText: string
-    heroSubtext: string
-    heroImage: Media
-  }
-
-  const industries = [
-    {
-      name: 'Medical Professionals',
-      description: 'Comprehensive insurance for medical practices',
-      icon: Stethoscope,
-      image:
-        'https://images.unsplash.com/photo-1682706841478-88eb8995357b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwZG9jdG9yJTIwc3RldGhvc2NvcGV8ZW58MXx8fHwxNzYwOTIyNjIyfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Dental Professionals',
-      description: 'Specialized coverage for dental practices',
-      icon: Award,
-      image:
-        'https://images.unsplash.com/photo-1639390159821-1cf308998c34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZW50aXN0JTIwZGVudGFsJTIwb2ZmaWNlfGVufDF8fHx8MTc2MDkyMjYyMnww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Insurance Agencies',
-      description: 'Professional liability for insurance brokers',
-      icon: Umbrella,
-      image:
-        'https://images.unsplash.com/photo-1594665964721-d96c7e10981c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBicm9rZXIlMjBidXNpbmVzc3xlbnwxfHx8fDE3NjA5MjI2MjV8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Food & Beverage',
-      description: 'Coverage for restaurants, cafes, and food service',
-      icon: UtensilsCrossed,
-      image:
-        'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZGluaW5nfGVufDB8fHx8MTczMDY3MjAwMHww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Law Firms',
-      description: 'Professional liability and E&O coverage',
-      icon: Scale,
-      image:
-        'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXclMjBmaXJtJTIwb2ZmaWNlfGVufDB8fHx8MTczMDY3MjAwMHww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Hospitals',
-      description: 'Comprehensive coverage for hospital facilities',
-      icon: Hospital,
-      image:
-        'https://images.unsplash.com/photo-1643055419804-397de33fe331?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3NwaXRhbCUyMGJ1aWxkaW5nJTIwbWVkaWNhbHxlbnwxfHx8fDE3NjA5MjI2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Surgery Centers',
-      description: 'Specialized protection for surgical facilities',
-      icon: Scissors,
-      image:
-        'https://images.unsplash.com/photo-1759813641406-980519f58b1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJnZXJ5JTIwY2VudGVyJTIwb3BlcmF0aW5nfGVufDF8fHx8MTc2MDkyMjYyM3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Pharmacies',
-      description: 'Professional liability for pharmacies',
-      icon: Pill,
-      image:
-        'https://images.unsplash.com/photo-1666886573590-5815157da865?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwcHJvdmlkZXIlMjBtZWRpY2FsfGVufDF8fHx8MTc2MDkyMjYyMnww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'House of Worship',
-      description: 'Protection for religious organizations',
-      icon: Heart,
-      image:
-        'https://images.unsplash.com/photo-1758790636662-2f8eec12077e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub25wcm9maXQlMjBjaGFyaXR5JTIwb3JnYW5pemF0aW9ufGVufDF8fHx8MTc2MDkyMjYyNXww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Lab & Diagnostics',
-      description: 'Coverage for diagnostic facilities',
-      icon: TestTube,
-      image:
-        'https://images.unsplash.com/photo-1758206523917-ebcf4a571e60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwbGFiJTIwZGlhZ25vc3RpY3xlbnwxfHx8fDE3NjA5MjI2MjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Software Development',
-      description: 'Coverage for tech businesses',
-      icon: Smartphone,
-      image:
-        'https://images.unsplash.com/photo-1712159018726-4564d92f3ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29tcGFueSUyMG9mZmljZXxlbnwxfHx8fDE3NjA4NjAxNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Urgent Care',
-      description: 'Insurance for urgent care facilities',
-      icon: Siren,
-      image:
-        'https://images.unsplash.com/photo-1758691463626-0ab959babe00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmdlbnQlMjBjYXJlJTIwY2xpbmljfGVufDF8fHx8MTc2MDkyMjYyM3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Commercial Real Estate',
-      description: 'Property owner protection',
-      icon: Building,
-      image:
-        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcmVhbCUyMGVzdGF0ZXxlbnwwfHx8fDE3MzA2NzIwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      name: 'Property Management',
-      description: 'Liability for property managers',
-      icon: Home,
-      image:
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnR8ZW58MHx8fHwxNzMwNjcyMDAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-  ]
-
   const benefits = [
     {
       icon: Shield,
@@ -219,7 +84,8 @@ export async function HomePage() {
                   className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed"
                   style={{ fontFamily: 'DM Sans', fontWeight: 400 }}
                 >
-                  {heroSubtext}
+                  Professional liability and commercial insurance tailored to your industry. Get
+                  matched with A-rated carriers and save an average of 20% on coverage.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -232,14 +98,15 @@ export async function HomePage() {
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
-                  <Button
-                    // onClick={() => onNavigate('about')}
-                    variant="outline"
-                    className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg h-auto"
-                    style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                  >
-                    Learn More
-                  </Button>
+                  <Link href="/about">
+                    <Button
+                      variant="outline"
+                      className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg h-auto"
+                      style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+                    >
+                      Learn More
+                    </Button>
+                  </Link>
                 </div>
 
                 {/* Stats inline */}
@@ -294,11 +161,13 @@ export async function HomePage() {
                 <div className="relative scale-105 lg:scale-110">
                   {/* Main hero image */}
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    {/* <img
-                      src={heroImage?.url || null}
-                      alt={heroImage?.alt || ''}
+                    <Image
+                      src="/hero.jpeg"
+                      alt="The Assurixs team"
+                      width={600}
+                      height={400}
                       className="w-full h-auto object-cover"
-                    /> */}
+                    />
                   </div>
 
                   {/* Floating badge - 30+ Years - Bottom Left */}
@@ -325,7 +194,7 @@ export async function HomePage() {
                   </div>
 
                   {/* Floating badge - 24/7 Support - Top Right */}
-                  <div className="absolute top-12 -right-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100">
+                  {/* <div className="absolute top-12 -right-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100">
                     <div className="flex items-center gap-2">
                       <Clock className="w-5 h-5 text-gray-900" />
                       <div>
@@ -337,7 +206,7 @@ export async function HomePage() {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
