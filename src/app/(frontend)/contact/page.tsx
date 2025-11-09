@@ -21,7 +21,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl mb-6">Get Your Free Quote</h1>
             <p className="text-xl text-white/90">
-              Let's discuss your insurance needs and find the best coverage at the right price
+              Let&apos;s discuss your insurance needs and find the best coverage at the right price
             </p>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function ContactPage() {
                         <p className="text-muted-foreground">
                           Available 24/7
                           <br />
-                          We're here when you need us
+                          We&apos;re here when you need us
                         </p>
                       </div>
                     </div>

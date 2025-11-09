@@ -190,7 +190,7 @@ export function ContactForm() {
             <span className="text-gray-900" style={{ fontFamily: 'DM Sans', fontWeight: 700 }}>
               1.
             </span>
-            <span>We'll review your information and reach out within 24 hours</span>
+            <span>We&apos;ll review your information and reach out within 24 hours</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-gray-900" style={{ fontFamily: 'DM Sans', fontWeight: 700 }}>

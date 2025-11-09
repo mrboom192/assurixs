@@ -13,7 +13,6 @@ import { Header } from '@/components/Header'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { Footer } from '@/components/Footer'
 import { Providers } from '@/providers'
-import { AdminBar } from '@/components/AdminBar'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -36,6 +35,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 }
 
 export const metadata: Metadata = {
+  title: 'Medical Malpractice & Professional Liability Insurance | Assurixs',
+  description:
+    'Assurixs specializes in providing tailored medical malpractice and professional liability insurance solutions for healthcare professionals. Get a quote today!',
   metadataBase: new URL(getServerSideURL()),
   twitter: {
     card: 'summary_large_image',

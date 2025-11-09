@@ -38,9 +38,10 @@ export default function PrivacyPage() {
 
             <h2>Introduction</h2>
             <p>
-              Assurixs Insurance Services ("we," "our," or "us") is committed to protecting your
-              privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard
-              your information when you visit our website or use our services.
+              Assurixs Insurance Services (&apos;we,&apos; &apos;our,&apos; or &apos;us&apos;) is
+              committed to protecting your privacy. This Privacy Policy explains how we collect,
+              use, disclose, and safeguard your information when you visit our website or use our
+              services.
             </p>
 
             <h2>Information We Collect</h2>
@@ -110,7 +111,7 @@ export default function PrivacyPage() {
               experience. You can control cookies through your browser settings.
             </p>
 
-            <h2>Children's Privacy</h2>
+            <h2>Children&apos;s Privacy</h2>
             <p>
               Our services are not directed to individuals under the age of 18. We do not knowingly
               collect personal information from children.
@@ -119,8 +120,8 @@ export default function PrivacyPage() {
             <h2>Changes to This Policy</h2>
             <p>
               We may update this Privacy Policy from time to time. We will notify you of any
-              material changes by posting the new policy on this page with an updated "Last Updated"
-              date.
+              material changes by posting the new policy on this page with an updated &quot;Last
+              Updated&quot; date.
             </p>
 
             <h2>Contact Us</h2>

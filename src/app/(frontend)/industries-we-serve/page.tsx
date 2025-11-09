@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import IndustriesGrid from '@/components/IndustriesGrid'
+import Link from 'next/link'
 
 export default function IndustriesPage() {
   const testimonials = [
@@ -92,7 +93,7 @@ export default function IndustriesPage() {
                 className="text-lg text-muted-foreground max-w-2xl mx-auto"
                 style={{ fontFamily: 'DM Sans', fontWeight: 400 }}
               >
-                Real experiences from businesses we've helped protect with A-rated insurance
+                Real experiences from businesses we&apos;ve helped protect with A-rated insurance
                 coverage
               </p>
             </div>
@@ -121,7 +122,7 @@ export default function IndustriesPage() {
                       className="text-sm text-gray-700 mb-4 italic"
                       style={{ fontFamily: 'DM Sans', fontWeight: 400 }}
                     >
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </p>
 
                     {/* Author info */}
@@ -227,17 +228,19 @@ export default function IndustriesPage() {
             className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
             style={{ fontFamily: 'DM Sans', fontWeight: 400 }}
           >
-            Let's discuss how our specialized expertise can save you money and improve your
+            Let&apos;s discuss how our specialized expertise can save you money and improve your
             coverage.
           </p>
-          <Button
-            size="lg"
-            className="bg-white text-gray-900 hover:bg-gray-100 px-10 py-6 text-lg shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
-            style={{ fontFamily: 'DM Sans', fontWeight: 700 }}
-          >
-            Get Your Industry-Specific Quote
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              className="bg-white text-gray-900 hover:bg-gray-100 px-10 py-6 text-lg shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+              style={{ fontFamily: 'DM Sans', fontWeight: 700 }}
+            >
+              Get Your Industry-Specific Quote
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

@@ -2,6 +2,8 @@ import { ArrowRight, Shield, Phone } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import ServicesGrid from '@/components/ServicesGrid'
+import Link from 'next/link'
+import { L } from 'vitest/dist/chunks/reporters.d.DL9pg5DB.js'
 
 export default function ServicesPage() {
   const differentiators = [
@@ -122,22 +124,25 @@ export default function ServicesPage() {
               Contact us for a personalized consultation and quote
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                // onClick={() => onNavigate('contact')}
-                className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6"
-                style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
-              >
-                Request Quote
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button
-                variant="outline"
-                className="border-gray-300 text-gray-900 hover:bg-gray-50 px-8 py-6"
-                style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
-              >
-                <Phone className="mr-2 w-4 h-4" />
-                714-729-0500
-              </Button>
+              <Link href="/contact">
+                <Button
+                  className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6"
+                  style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
+                >
+                  Request Quote
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="tel:714-729-0500">
+                <Button
+                  variant="outline"
+                  className="border-gray-300 text-gray-900 hover:bg-gray-50 px-8 py-6"
+                  style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
+                >
+                  <Phone className="mr-2 w-4 h-4" />
+                  714-729-0500
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

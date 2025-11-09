@@ -21,6 +21,13 @@ export default buildConfig({
   admin: {
     meta: {
       titleSuffix: '- Assurixs',
+      icons: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          url: '/favicon.ico',
+        },
+      ],
     },
     components: {
       graphics: {

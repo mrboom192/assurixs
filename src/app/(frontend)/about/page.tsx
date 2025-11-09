@@ -1,6 +1,7 @@
 import { Award, Target, Heart, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import Link from 'next/link'
 
 export default function AboutPage() {
   const values = [
@@ -265,23 +266,25 @@ export default function AboutPage() {
                     backed by A-rated carriers.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button
-                      //   onClick={() => onNavigate('contact')}
-                      size="lg"
-                      className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
-                      style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                    >
-                      Get Your Free Quote
-                    </Button>
-                    <Button
-                      //   onClick={() => onNavigate('services')}
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
-                      style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                    >
-                      View Our Services
-                    </Button>
+                    <Link href="/contact">
+                      <Button
+                        size="lg"
+                        className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
+                        style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+                      >
+                        Get Your Free Quote
+                      </Button>
+                    </Link>
+                    <Link href="/our-services">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
+                        style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+                      >
+                        View Our Services
+                      </Button>
+                    </Link>
                   </div>
                   <p
                     className="text-sm text-gray-500 mt-6"
