@@ -5,12 +5,20 @@
 
 declare module "sst" {
   export interface Resource {
-    "AssurixsService": {
-      "service": string
-      "type": "sst.aws.Service"
+    "AssurixsNextjs": {
+      "type": "sst.aws.Nextjs"
       "url": string
     }
+    "AssurixsPostgres": {
+      "database": string
+      "host": string
+      "password": string
+      "port": number
+      "type": "sst.aws.Postgres"
+      "username": string
+    }
     "AssurixsVpc": {
+      "bastion": string
       "type": "sst.aws.Vpc"
     }
   }

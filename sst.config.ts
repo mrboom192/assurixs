@@ -16,32 +16,12 @@ export default $config({
     }
   },
   async run() {
-    const vpc = new sst.aws.Vpc('AssurixsVpc', { nat: 'managed' })
+    const vpc = new sst.aws.Vpc('AssurixsVpc', { bastion: true, nat: 'ec2' })
+    const rds = new sst.aws.Postgres('AssurixsPostgres', { vpc, proxy: true })
 
-    const efs = new sst.aws.Efs('AssurixsEfs', {
+    new sst.aws.Nextjs('AssurixsNextjs', {
+      link: [rds],
       vpc,
-    })
-
-    const cluster = new sst.aws.Cluster('AssurixsCluster', { vpc })
-
-    new sst.aws.Service('AssurixsService', {
-      cluster,
-      image: { context: '.', dockerfile: 'Dockerfile' },
-      loadBalancer: {
-        ports: [{ listen: '80/http', forward: '3000/http' }],
-      },
-      volumes: [
-        {
-          // Mount the same path used by your DATABASE_URI
-          path: '/app/assurixs.db',
-          efs, // <-- reference the EFS instance here (no name or object)
-        },
-      ],
-      environment: {
-        NODE_ENV: 'production',
-        PAYLOAD_SECRET: process.env.PAYLOAD_SECRET!,
-        DATABASE_URI: 'file:/app/assurixs.db',
-      },
     })
   },
 })

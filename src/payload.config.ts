@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
-import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { postgresAdapter } from '@payloadcms/db-postgres'
+import { Resource } from 'sst'
 
 import sharp from 'sharp' // sharp-import
 import path from 'path'
@@ -46,9 +47,13 @@ export default buildConfig({
     },
     user: Users.slug,
   },
-  db: sqliteAdapter({
-    client: {
-      url: process.env.DATABASE_URI || '',
+  db: postgresAdapter({
+    pool: {
+      host: Resource.AssurixsPostgres.host,
+      port: Resource.AssurixsPostgres.port,
+      user: Resource.AssurixsPostgres.username,
+      password: Resource.AssurixsPostgres.password,
+      database: Resource.AssurixsPostgres.database,
     },
   }),
   collections: [Media, Users, InsuranceCarrier, IndustryCategory, IndustriesServed, Services],
