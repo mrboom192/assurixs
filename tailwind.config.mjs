@@ -26,6 +26,27 @@ const config = {
     'bg-warning/30',
   ],
   theme: {
+    extend: {
+      keyframes: {
+        overlayShow: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        sidebarShow: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        sidebarHide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        'overlay-show': 'overlayShow 300ms cubic-bezier(0.16,1,0.3,1)',
+        'sidebar-show': 'sidebarShow 300ms cubic-bezier(0.16,1,0.3,1)',
+        'sidebar-hide': 'sidebarHide 300ms cubic-bezier(0.16,1,0.3,1)',
+      },
+    },
     container: {
       center: true,
       padding: {

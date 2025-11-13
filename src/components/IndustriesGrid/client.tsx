@@ -44,11 +44,12 @@ export default function IndustriesGridClient({
                   className="overflow-hidden border border-gray-200 transition-all duration-300 group hover:shadow-2xl"
                 >
                   <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src={image?.url || ''}
+                    <img
+                      loading="lazy"
+                      src={`https://www.assurixs.com${image?.url}`}
                       alt={industry.name}
-                      fill
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={{ objectFit: 'cover' }}
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 

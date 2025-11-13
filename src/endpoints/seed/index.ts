@@ -12,7 +12,6 @@ const collections: CollectionSlug[] = [
   'industries-served',
   'services',
   'media',
-  'services',
 ]
 
 // const globals: GlobalSlug[] = ['home']
@@ -52,72 +51,28 @@ export const seed = async ({
     payload.logger.warn(`— Media directory not found: ${mediaDir}`)
   }
 
-  payload.logger.info(`— Clearing collections and globals...`)
-  // await Promise.all(
-  //   globals.map((global) =>
-  //     payload.updateGlobal({
-  //       slug: global,
-  //       data: {},
-  //       depth: 0,
-  //       context: {
-  //         disableRevalidate: true,
-  //       },
-  //     }),
-  //   ),
-  // )
+  payload.logger.info(`— Clearing collections...`)
   await Promise.all(
     collections.map((collection) => payload.db.deleteMany({ collection, req, where: {} })),
   )
+  await payload.db.deleteMany({ collection: 'industry-category', req, where: {} })
   await Promise.all(
     collections
       .filter((collection) => Boolean(payload.collections[collection].config.versions))
       .map((collection) => payload.db.deleteVersions({ collection, req, where: {} })),
   )
 
-  payload.logger.info(`— Seeding demo author and user...`)
-  await payload.delete({
-    collection: 'users',
-    depth: 0,
-    where: {
-      email: {
-        equals: 'demo-author@example.com',
-      },
-    },
-  })
-
   payload.logger.info(`— Seeding services...`)
-  await Promise.all(
-    servicesSeedData.map((service) =>
-      payload.create({
-        collection: 'services',
-        data: service,
-      }),
-    ),
-  )
+  for (const service of servicesSeedData) {
+    await payload.create({
+      collection: 'services',
+      data: service,
+    })
+  }
 
   await createInsuranceCarriers({ payload, req })
   const categoryIds = await createIndustryCategories({ payload, req })
   await createServicedIndustries({ payload, req, categoryIds })
 
   payload.logger.info('Seeded database successfully!')
-}
-
-async function fetchFileByURL(url: string): Promise<File> {
-  const res = await fetch(url, {
-    credentials: 'include',
-    method: 'GET',
-  })
-
-  if (!res.ok) {
-    throw new Error(`Failed to fetch file from ${url}, status: ${res.status}`)
-  }
-
-  const data = await res.arrayBuffer()
-
-  return {
-    name: url.split('/').pop() || `file-${Date.now()}`,
-    data: Buffer.from(data),
-    mimetype: `image/${url.split('.').pop()}`,
-    size: data.byteLength,
-  }
 }

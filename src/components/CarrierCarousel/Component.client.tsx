@@ -28,12 +28,13 @@ export const CarrierCarouselClient: React.FC<CarrierCarouselClientProps> = ({ da
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
-                src={logo.url || ''}
+              <img
+                src={`https://www.assurixs.com${logo?.url}`}
                 alt={slide.name}
                 width={150}
                 height={90}
-                objectFit="contain"
+                loading="lazy"
+                style={{ objectFit: 'contain' }}
               />
             </Link>
           )

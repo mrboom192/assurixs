@@ -84,8 +84,8 @@ export default function HomePage() {
                   className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed"
                   style={{ fontFamily: 'DM Sans', fontWeight: 400 }}
                 >
-                  Professional liability and commercial insurance tailored to your industry. Get
-                  matched with A-rated carriers and save an average of 20% on coverage.
+                  Commercial insurance tailored to your industry. Get matched with A-rated carriers
+                  and save an average of 30% on coverage.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-12">

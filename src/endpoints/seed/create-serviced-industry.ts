@@ -1,16 +1,15 @@
-import { Payload, PayloadRequest, File } from 'payload'
-import fs from 'fs'
-import path from 'path'
+import { Payload, PayloadRequest } from 'payload'
 import { IndustriesServed } from '@/payload-types'
+import { fetchFileByURL } from './utils'
 
 const industries: (Omit<
   IndustriesServed,
   'id' | 'createdAt' | 'updatedAt' | 'image' | 'category'
-> & { file: string; category: string })[] = [
+> & { url: string; category: string })[] = [
   {
     name: 'Physicians & Surgeons',
     icon: 'stethoscope',
-    file: 'physicians.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/physicians.webp',
     description:
       'Comprehensive malpractice and business insurance for medical practices of all specialties.',
     coverageAreas: [
@@ -23,7 +22,7 @@ const industries: (Omit<
   {
     name: 'Dentists',
     icon: 'award',
-    file: 'dentists.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/dentists.webp',
     description:
       'Specialized coverage for dental practices including malpractice and equipment protection.',
     coverageAreas: [
@@ -36,7 +35,7 @@ const industries: (Omit<
   {
     name: 'Pharmacies',
     icon: 'pill',
-    file: 'pharmacies.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/pharmacies.webp',
     description:
       'Complete protection for retail and compounding pharmacies with errors & omissions coverage.',
     coverageAreas: [
@@ -49,7 +48,7 @@ const industries: (Omit<
   {
     name: 'Labs & Diagnostics',
     icon: 'test-tube',
-    file: 'labs-diagnostics.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/labs-diagnostics.webp',
     description: 'Specialized insurance for diagnostic facilities and medical laboratories.',
     coverageAreas: [
       { area: 'Professional Liability' },
@@ -61,7 +60,7 @@ const industries: (Omit<
   {
     name: 'Urgent Care Centers',
     icon: 'siren',
-    file: 'urgent-care.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/urgent-care.webp',
     description:
       'Comprehensive coverage for urgent care facilities with extended hours protection.',
     coverageAreas: [
@@ -74,7 +73,7 @@ const industries: (Omit<
   {
     name: 'Beauty & Wellness',
     icon: 'scissors',
-    file: 'beauty-wellness.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/beauty-wellness.webp',
     description:
       'Coverage for spas, salons, and aesthetic medical practices including equipment and liability.',
     coverageAreas: [
@@ -87,7 +86,7 @@ const industries: (Omit<
   {
     name: 'Nursing Homes',
     icon: 'hospital',
-    file: 'nursing-homes.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/nursing-homes.webp',
     description: 'Specialized coverage for skilled nursing and assisted living facilities.',
     coverageAreas: [
       { area: 'Professional Liability' },
@@ -99,7 +98,7 @@ const industries: (Omit<
   {
     name: 'Legal Services',
     icon: 'scale',
-    file: 'legal-services.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/legal-services.webp',
     description: 'Professional liability and business coverage for law firms and attorneys.',
     coverageAreas: [
       { area: 'Malpractice Insurance' },
@@ -111,7 +110,7 @@ const industries: (Omit<
   {
     name: 'Technology Companies',
     icon: 'smartphone',
-    file: 'technology-companies.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/technology-companies.webp',
     description:
       'E&O coverage and cyber protection for software companies and IT service providers.',
     coverageAreas: [
@@ -124,7 +123,7 @@ const industries: (Omit<
   {
     name: 'Restaurants & Bars',
     icon: 'utensils-crossed',
-    file: 'restaurants-bars.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/restaurants-bars.webp',
     description: 'Complete protection for food service businesses including liquor liability.',
     coverageAreas: [
       { area: 'General Liability' },
@@ -136,7 +135,7 @@ const industries: (Omit<
   {
     name: 'Property Management',
     icon: 'house',
-    file: 'property-management.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/property-management.webp',
     description: 'Comprehensive coverage for property managers and real estate professionals.',
     coverageAreas: [
       { area: 'General Liability' },
@@ -148,7 +147,7 @@ const industries: (Omit<
   {
     name: 'General Contractors',
     icon: 'building-2',
-    file: 'general-contractors.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/general-contractors.webp',
     description:
       'Specialized insurance for contractors including general liability and workers comp.',
     coverageAreas: [
@@ -161,7 +160,7 @@ const industries: (Omit<
   {
     name: 'Nonprofits',
     icon: 'heart',
-    file: 'nonprofits.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/nonprofits.webp',
     description:
       'Affordable coverage for nonprofit organizations including D&O and volunteer protection.',
     coverageAreas: [
@@ -174,7 +173,7 @@ const industries: (Omit<
   {
     name: 'Umbrella Policies',
     icon: 'umbrella',
-    file: 'umbrella-policies.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/umbrella-policies.webp',
     description:
       'Extra liability protection for businesses that need coverage beyond standard limits.',
     coverageAreas: [
@@ -183,6 +182,18 @@ const industries: (Omit<
       { area: 'Asset Protection' },
     ],
     category: 'Professional Services',
+  },
+  {
+    name: 'House of Worship',
+    icon: 'church',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/house-of-worship.webp',
+    description: 'Insurance solutions tailored for religious institutions and places of worship.',
+    coverageAreas: [
+      { area: 'Event Liability Coverage' },
+      { area: 'Property Coverage' },
+      { area: 'Volunteer Coverage' },
+    ],
+    category: 'Nonprofit',
   },
 ]
 
@@ -198,9 +209,7 @@ export const createServicedIndustries = async ({
   payload.logger.info('Seeding service industries...')
 
   for (const industry of industries) {
-    const filePath = path.resolve(process.cwd(), `src/endpoints/seed/industries/${industry.file}`)
-    const fileBuffer = await fs.promises.readFile(filePath)
-    const ext = path.extname(industry.file).slice(1)
+    const file = await fetchFileByURL(industry.url)
 
     // Create the media record
     const media = await payload.create({
@@ -209,12 +218,7 @@ export const createServicedIndustries = async ({
       data: {
         alt: `Image for ${industry.name}`,
       },
-      file: {
-        name: industry.file,
-        data: fileBuffer,
-        mimetype: `image/${ext}`,
-        size: fileBuffer.byteLength,
-      },
+      file,
     })
 
     // Create the insurance carrier, linking to that media

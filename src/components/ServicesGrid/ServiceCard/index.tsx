@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Service } from '@/payload-types'
 import { DynamicIcon, IconName } from 'lucide-react/dynamic'
+import Link from 'next/link'
 
 export default function ServiceCard({ service }: { service: Service }) {
   return (
@@ -27,14 +28,16 @@ export default function ServiceCard({ service }: { service: Service }) {
         >
           {service.description}
         </p>
-        <Button
-          variant="outline"
-          size="sm"
-          className="w-full border-gray-900 text-gray-900 hover:opacity-50"
-          style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
-        >
-          Request Quote
-        </Button>
+        <Link href="/contact">
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full border-gray-900 text-gray-900 hover:opacity-50"
+            style={{ fontFamily: 'DM Sans', fontWeight: 500 }}
+          >
+            Request Quote
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   )

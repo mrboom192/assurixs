@@ -1,45 +1,92 @@
-import { Payload, PayloadRequest, File } from 'payload'
-import fs from 'fs'
-import path from 'path'
+import { Payload, PayloadRequest } from 'payload'
+import { fetchFileByURL } from './utils'
 
 const carriers = [
-  { name: 'AmTrust', file: 'amtrust.png', website: 'https://www.amtrustfinancial.com/' },
-  { name: 'Biberk', file: 'biberk.webp', website: 'https://www.biberk.com/' },
-  { name: 'CNA', file: 'cna.png', website: 'https://www.cna.com/' },
+  {
+    name: 'AmTrust',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/amtrust.webp',
+    website: 'https://www.amtrustfinancial.com/',
+  },
+  {
+    name: 'Biberk',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/biberk.webp',
+    website: 'https://www.biberk.com/',
+  },
+  {
+    name: 'CNA',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/cna.webp',
+    website: 'https://www.cna.com/',
+  },
   {
     name: 'Dentist Advantage',
-    file: 'dentist-advantage.png',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/dentist-advantage.webp',
     website: 'https://www.dentistadvantage.com/',
   },
-  { name: 'Employers', file: 'employers.png', website: 'https://www.employers.com/' },
+  {
+    name: 'Employers',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/employers.webp',
+    website: 'https://www.employers.com/',
+  },
   {
     name: 'Great American',
-    file: 'great-american.png',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/great-american.webp',
     website: 'https://www.greatamericaninsurancegroup.com/',
   },
-  { name: 'Guide One', file: 'guide-one.png', website: 'https://www.guideone.com/' },
-  { name: 'Hanover', file: 'hanover.webp', website: 'https://www.hanover.com/' },
-  { name: 'Indigo', file: 'indigo.png', website: 'https://www.indigogroup.com/' },
-  { name: 'Liberty Mutual', file: 'liberty-mutual.png', website: 'https://www.libertymutual.com/' },
+  {
+    name: 'Guide One',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/guide-one.webp',
+    website: 'https://www.guideone.com/',
+  },
+  {
+    name: 'Hanover',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/hanover.webp',
+    website: 'https://www.hanover.com/',
+  },
+  {
+    name: 'Indigo',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/indigo.webp',
+    website: 'https://www.indigogroup.com/',
+  },
+  {
+    name: 'Liberty Mutual',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/liberty-mutual.webp',
+    website: 'https://www.libertymutual.com/',
+  },
   {
     name: 'LoneStar Alliance',
-    file: 'lonestar-alliance.png',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/lonestar-alliance.webp',
     website: 'https://www.lonestaralliance.com/',
   },
   {
     name: 'Medical Protective',
-    file: 'medical-protective.png',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/medical-protective.webp',
     website: 'https://www.medpro.com/',
   },
-  { name: 'PHLY', file: 'phly.png', website: 'https://www.phly.com/' },
-  { name: 'ProAssurance', file: 'proassurance.webp', website: 'https://www.proassurance.com/' },
+  {
+    name: 'PHLY',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/phly.webp',
+    website: 'https://www.phly.com/',
+  },
+  {
+    name: 'ProAssurance',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/proassurance.webp',
+    website: 'https://www.proassurance.com/',
+  },
   {
     name: 'The Doctors Company',
-    file: 'the-doctors-company.png',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/the-doctors-company.webp',
     website: 'https://www.thedoctors.com/',
   },
-  { name: 'The Hartford', file: 'the-hartford.png', website: 'https://www.thehartford.com/' },
-  { name: 'Travelers', file: 'travelers.png', website: 'https://www.travelers.com/' },
+  {
+    name: 'The Hartford',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/the-hartford.webp',
+    website: 'https://www.thehartford.com/',
+  },
+  {
+    name: 'Travelers',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/carriers/travelers.webp',
+    website: 'https://www.travelers.com/',
+  },
 ]
 
 export const createInsuranceCarriers = async ({
@@ -52,9 +99,7 @@ export const createInsuranceCarriers = async ({
   payload.logger.info('Seeding insurance carriers...')
 
   for (const carrier of carriers) {
-    const filePath = path.resolve(process.cwd(), `src/endpoints/seed/carriers/${carrier.file}`)
-    const fileBuffer = await fs.promises.readFile(filePath)
-    const ext = path.extname(carrier.file).slice(1)
+    const file = await fetchFileByURL(carrier.url)
 
     // Create the media record
     const media = await payload.create({
@@ -63,12 +108,7 @@ export const createInsuranceCarriers = async ({
       data: {
         alt: `${carrier.name} Logo`,
       },
-      file: {
-        name: carrier.file,
-        data: fileBuffer,
-        mimetype: `image/${ext}`,
-        size: fileBuffer.byteLength,
-      },
+      file,
     })
 
     // Create the insurance carrier, linking to that media

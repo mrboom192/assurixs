@@ -6,11 +6,13 @@ import config from '@payload-config'
 export async function CarrierCarousel() {
   const payload = await getPayload({ config })
 
-  const result = await payload.find({
-    collection: 'insurance-carrier',
-    pagination: false,
-    depth: 1,
-  })
+  const result = await payload
+    .find({
+      collection: 'insurance-carrier',
+      pagination: false,
+      depth: 1,
+    })
+    .then((res) => res.docs)
 
-  return <CarrierCarouselClient data={result.docs || []} />
+  return <CarrierCarouselClient data={result || []} />
 }

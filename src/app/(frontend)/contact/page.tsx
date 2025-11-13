@@ -61,10 +61,10 @@ export default function ContactPage() {
                       <div>
                         <h3 className="mb-1">Email</h3>
                         <a
-                          href="mailto:ains@assurixs.com"
+                          href="mailto:ais@assurixs.com"
                           className="text-gray-900 hover:underline break-all"
                         >
-                          ains@assurixs.com
+                          ais@assurixs.com
                         </a>
                         <p className="text-sm text-muted-foreground mt-1">
                           We respond within 24 hours

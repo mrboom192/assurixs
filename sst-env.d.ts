@@ -5,6 +5,11 @@
 
 declare module "sst" {
   export interface Resource {
+    "AssurixsEmail": {
+      "configSet": string
+      "sender": string
+      "type": "sst.aws.Email"
+    }
     "AssurixsNextjs": {
       "type": "sst.aws.Nextjs"
       "url": string
@@ -17,9 +22,18 @@ declare module "sst" {
       "type": "sst.aws.Postgres"
       "username": string
     }
+    "AssurixsUploads": {
+      "name": string
+      "type": "sst.aws.Bucket"
+    }
     "AssurixsVpc": {
       "bastion": string
       "type": "sst.aws.Vpc"
+    }
+    "EmailApi": {
+      "name": string
+      "type": "sst.aws.Function"
+      "url": string
     }
   }
 }

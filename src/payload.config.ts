@@ -14,6 +14,7 @@ import { InsuranceCarrier } from './collections/InsuranceCarrier'
 import { IndustriesServed } from './collections/IndustriesServed'
 import { Services } from './collections/Services'
 import { IndustryCategory } from './collections/IndustryCategory'
+import { s3Storage } from '@payloadcms/storage-s3'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -47,6 +48,15 @@ export default buildConfig({
     },
     user: Users.slug,
   },
+  plugins: [
+    s3Storage({
+      collections: {
+        media: true,
+      },
+      bucket: Resource.AssurixsUploads.name,
+      config: {},
+    }),
+  ],
   db: postgresAdapter({
     pool: {
       host: Resource.AssurixsPostgres.host,

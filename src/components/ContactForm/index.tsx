@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { toast } from 'sonner'
 import { Send } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -15,9 +14,19 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Card, CardContent } from '@/components/ui/card'
+import { sendQuoteEmail } from '@/services/sender'
+
+export type ContactFormData = {
+  name: string
+  email: string
+  phone: string
+  company: string
+  industry: string
+  message: string
+}
 
 export function ContactForm() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     phone: '',
@@ -38,33 +47,14 @@ export function ContactForm() {
     'Other',
   ]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Create mailto link with form data
-    const subject = `Quote Request from ${formData.name} - ${formData.company}`
-    const body = `
-        Name: ${formData.name}
-        Email: ${formData.email}
-        Phone: ${formData.phone}
-        Company: ${formData.company}
-        Industry: ${formData.industry}
+    try {
+      await sendQuoteEmail(formData)
 
-        Message:
-        ${formData.message}
-    `.trim()
-
-    const mailtoLink = `mailto:ains@assurixs.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-
-    // Open mailto link
-    window.location.href = mailtoLink
-
-    // Show success message
-    setTimeout(() => {
-      toast.success('Quote request prepared! Your email client should open shortly.')
-      setIsSubmitting(false)
-      // Reset form
+      // Reset form on success
       setFormData({
         name: '',
         email: '',
@@ -73,7 +63,12 @@ export function ContactForm() {
         industry: '',
         message: '',
       })
-    }, 1000)
+    } catch (error) {
+      console.error('Error sending quote email:', error)
+      // Optionally show an error message or toast here
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (field: string, value: string) => {

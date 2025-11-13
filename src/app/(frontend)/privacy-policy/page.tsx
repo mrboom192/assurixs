@@ -131,7 +131,7 @@ export default function PrivacyPage() {
             </p>
             <ul>
               <li>
-                <strong>Email:</strong> ains@assurixs.com
+                <strong>Email:</strong> ais@assurixs.com
               </li>
               <li>
                 <strong>Phone:</strong> 714-729-0500

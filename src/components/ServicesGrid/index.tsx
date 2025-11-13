@@ -6,7 +6,7 @@ export default async function ServicesGrid() {
   const payload = await getPayload({ config })
 
   const services = await payload
-    .find({ collection: 'services', pagination: false })
+    .find({ collection: 'services', pagination: false, sort: 'createdAt' })
     .then((res) => res.docs)
 
   return (
