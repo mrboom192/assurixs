@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { DynamicIcon } from 'lucide-react/dynamic'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export default function IndustriesGridClient({
   categories,
@@ -100,14 +101,16 @@ export default function IndustriesGridClient({
                       </ul>
                     </div>
 
-                    <Button
-                      variant="outline"
-                      className="w-full border-gray-200 group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition-all"
-                      style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                    >
-                      Get a Quote
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <Link href="/contact">
+                      <Button
+                        variant="outline"
+                        className="w-full border-gray-200 group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition-all"
+                        style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+                      >
+                        Get a Quote
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               )

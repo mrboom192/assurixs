@@ -11,6 +11,7 @@ export default async function IndustriesGrid() {
       .find({
         collection: 'industry-category',
         pagination: false,
+        sort: 'createdAt',
       })
       .then((res) => res.docs),
     await payload
@@ -18,6 +19,7 @@ export default async function IndustriesGrid() {
         collection: 'industries-served',
         pagination: false,
         depth: 1,
+        sort: 'createdAt',
       })
       .then((res) => res.docs),
   ])
