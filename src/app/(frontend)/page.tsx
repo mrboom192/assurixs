@@ -65,13 +65,25 @@ export default function HomePage() {
 
             {/* Hero Heading - Full Width */}
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl mb-8 text-gray-900 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl mb-8 text-gray-900 leading-tight group"
               style={{ fontFamily: 'DM Sans', fontWeight: 900 }}
             >
               Your Gateway to{' '}
               <span className="relative inline-block">
                 <span className="relative z-10">Optimal</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-indigo-200/60 to-purple-200/60 -skew-x-12 rounded"></span>
+
+                {/* Highlight — invisible until hover */}
+                <span
+                  className="
+        absolute inset-0 
+        bg-gradient-to-r from-indigo-200/60 to-purple-200/60 
+        -skew-x-12 rounded 
+        opacity-0 
+        transition-opacity 
+        duration-300
+        group-hover:opacity-100
+      "
+                ></span>
               </span>{' '}
               Insurance Solutions
             </h1>
