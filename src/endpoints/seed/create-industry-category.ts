@@ -8,9 +8,6 @@ const categories = [
     title: 'Professional Services',
   },
   {
-    title: 'Technology',
-  },
-  {
     title: 'Food & Beverage',
   },
   {

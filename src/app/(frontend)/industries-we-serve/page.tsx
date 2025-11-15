@@ -66,7 +66,7 @@ export default function IndustriesPage() {
               className="text-4xl md:text-5xl lg:text-6xl mb-6"
               style={{ fontFamily: 'DM Sans', fontWeight: 700 }}
             >
-              Industries We Serve
+              Industries We Specialize In
             </h1>
             <p
               className="text-xl text-white/90 max-w-2xl mx-auto"

@@ -51,7 +51,17 @@ export default buildConfig({
   plugins: [
     s3Storage({
       collections: {
-        media: true,
+        media: {
+          disablePayloadAccessControl: true,
+          generateFileURL: ({ filename, prefix }) => {
+            const bucket = Resource.AssurixsUploads.name
+            const region = 'us-east-1'
+
+            const key = prefix ? `${prefix}/${filename}` : filename
+
+            return `https://${bucket}.s3.${region}.amazonaws.com/${key}`
+          },
+        },
       },
       bucket: Resource.AssurixsUploads.name,
       config: {},

@@ -29,7 +29,7 @@ export const CarrierCarouselClient: React.FC<CarrierCarouselClientProps> = ({ da
               rel="noopener noreferrer"
             >
               <img
-                src={`https://www.assurixs.com${logo?.url}`}
+                src={`${logo?.url}`}
                 alt={slide.name}
                 width={150}
                 height={90}

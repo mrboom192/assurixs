@@ -47,7 +47,7 @@ export default function ServicesPage() {
               INSURANCE SERVICES
             </p>
             <h1
-              className="text-4xl md:text-5xl mb-6 text-gray-900"
+              className="text-4xl md:text-5xl mb-6 text-gray-900 capitalize"
               style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
             >
               Comprehensive business insurance backed by A-rated carriers

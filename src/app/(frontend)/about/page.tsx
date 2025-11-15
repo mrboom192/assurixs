@@ -58,7 +58,12 @@ export default function AboutPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl mb-6">About Assurix Insurance</h1>
+            <h1
+              className="text-4xl md:text-5xl mb-6"
+              style={{ fontFamily: 'DM Sans', fontWeight: 700 }}
+            >
+              About Assurix Insurance
+            </h1>
             <p className="text-xl text-white/90">
               Dedicated to protecting what matters most to you
             </p>

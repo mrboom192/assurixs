@@ -46,16 +46,16 @@ const industries: (Omit<
     category: 'Healthcare',
   },
   {
-    name: 'Labs & Diagnostics',
-    icon: 'test-tube',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/labs-diagnostics.webp',
-    description: 'Specialized insurance for diagnostic facilities and medical laboratories.',
+    name: 'Restaurants',
+    icon: 'utensils-crossed',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/restaurants-bars.webp',
+    description: 'Complete protection for food service businesses including liquor liability.',
     coverageAreas: [
-      { area: 'Professional Liability' },
-      { area: 'Equipment Protection' },
-      { area: 'Business Interruption' },
+      { area: 'General Liability' },
+      { area: 'Liquor Liability' },
+      { area: 'Workers Compensation' },
     ],
-    category: 'Healthcare',
+    category: 'Food & Beverage',
   },
   {
     name: 'Urgent Care Centers',
@@ -71,21 +71,82 @@ const industries: (Omit<
     category: 'Healthcare',
   },
   {
-    name: 'Beauty & Wellness',
+    name: 'Surgery Centers',
     icon: 'scissors',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/beauty-wellness.webp',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/surgery-centers.webp',
+    description: 'Comprehensive coverage for surgery centers with extended hours protection.',
+    coverageAreas: [
+      { area: 'Medical Malpractice' },
+      { area: 'General Liability' },
+      { area: 'Anesthesia Liability' },
+    ],
+    category: 'Healthcare',
+  },
+  {
+    name: 'Hospitals',
+    icon: 'hospital',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/hospitals.webp',
     description:
-      'Coverage for spas, salons, and aesthetic medical practices including equipment and liability.',
+      'Essential liability and property protection for hospitals and large healthcare facilities.',
+    coverageAreas: [
+      { area: 'Medical Professional Liability' },
+      { area: 'General Liability' },
+      { area: 'Property & Equipment Coverage' },
+    ],
+    category: 'Healthcare',
+  },
+  {
+    name: 'House of Worship',
+    icon: 'church',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/house-of-worship.webp',
+    description: 'Insurance solutions tailored for religious institutions and places of worship.',
+    coverageAreas: [
+      { area: 'Event Liability Coverage' },
+      { area: 'Property Coverage' },
+      { area: 'Volunteer Coverage' },
+    ],
+    category: 'Nonprofit',
+  },
+  {
+    name: 'Nonprofits',
+    icon: 'heart',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/nonprofits.webp',
+    description:
+      'Affordable coverage for nonprofit organizations including D&O and volunteer protection.',
+    coverageAreas: [
+      { area: 'General Liability' },
+      { area: 'Directors & Officers' },
+      { area: 'Property Coverage' },
+    ],
+    category: 'Nonprofit',
+  },
+  {
+    name: 'Commercial Real Estate',
+    icon: 'house',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/property-management.webp',
+    description: 'Comprehensive coverage for property managers and real estate professionals.',
+    coverageAreas: [
+      { area: 'General Liability' },
+      { area: 'Errors & Omissions' },
+      { area: 'Property Coverage' },
+    ],
+    category: 'Real Estate',
+  },
+  {
+    name: 'Labs & Diagnostics',
+    icon: 'test-tube',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/labs-diagnostics.webp',
+    description: 'Specialized insurance for diagnostic facilities and medical laboratories.',
     coverageAreas: [
       { area: 'Professional Liability' },
-      { area: 'General Liability' },
-      { area: 'Equipment Coverage' },
+      { area: 'Equipment Protection' },
+      { area: 'Business Interruption' },
     ],
     category: 'Healthcare',
   },
   {
     name: 'Nursing Homes',
-    icon: 'hospital',
+    icon: 'accessibility',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/nursing-homes.webp',
     description: 'Specialized coverage for skilled nursing and assisted living facilities.',
     coverageAreas: [
@@ -106,94 +167,6 @@ const industries: (Omit<
       { area: 'General Liability' },
     ],
     category: 'Professional Services',
-  },
-  {
-    name: 'Technology Companies',
-    icon: 'smartphone',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/technology-companies.webp',
-    description:
-      'E&O coverage and cyber protection for software companies and IT service providers.',
-    coverageAreas: [
-      { area: 'Errors & Omissions' },
-      { area: 'Cyber Liability' },
-      { area: 'Business Property' },
-    ],
-    category: 'Technology',
-  },
-  {
-    name: 'Restaurants & Bars',
-    icon: 'utensils-crossed',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/restaurants-bars.webp',
-    description: 'Complete protection for food service businesses including liquor liability.',
-    coverageAreas: [
-      { area: 'General Liability' },
-      { area: 'Liquor Liability' },
-      { area: 'Workers Compensation' },
-    ],
-    category: 'Food & Beverage',
-  },
-  {
-    name: 'Property Management',
-    icon: 'house',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/property-management.webp',
-    description: 'Comprehensive coverage for property managers and real estate professionals.',
-    coverageAreas: [
-      { area: 'General Liability' },
-      { area: 'Errors & Omissions' },
-      { area: 'Property Coverage' },
-    ],
-    category: 'Real Estate',
-  },
-  {
-    name: 'General Contractors',
-    icon: 'building-2',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/general-contractors.webp',
-    description:
-      'Specialized insurance for contractors including general liability and workers comp.',
-    coverageAreas: [
-      { area: 'General Liability' },
-      { area: 'Workers Compensation' },
-      { area: 'Auto Coverage' },
-    ],
-    category: 'Professional Services',
-  },
-  {
-    name: 'Nonprofits',
-    icon: 'heart',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/nonprofits.webp',
-    description:
-      'Affordable coverage for nonprofit organizations including D&O and volunteer protection.',
-    coverageAreas: [
-      { area: 'General Liability' },
-      { area: 'Directors & Officers' },
-      { area: 'Property Coverage' },
-    ],
-    category: 'Nonprofit',
-  },
-  {
-    name: 'Umbrella Policies',
-    icon: 'umbrella',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/umbrella-policies.webp',
-    description:
-      'Extra liability protection for businesses that need coverage beyond standard limits.',
-    coverageAreas: [
-      { area: 'Excess Liability' },
-      { area: 'Multi-Policy Coverage' },
-      { area: 'Asset Protection' },
-    ],
-    category: 'Professional Services',
-  },
-  {
-    name: 'House of Worship',
-    icon: 'church',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/house-of-worship.webp',
-    description: 'Insurance solutions tailored for religious institutions and places of worship.',
-    coverageAreas: [
-      { area: 'Event Liability Coverage' },
-      { area: 'Property Coverage' },
-      { area: 'Volunteer Coverage' },
-    ],
-    category: 'Nonprofit',
   },
 ]
 

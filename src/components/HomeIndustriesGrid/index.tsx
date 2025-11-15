@@ -19,7 +19,7 @@ export async function HomeIndustriesGrid() {
               className="text-3xl md:text-4xl mb-4 text-gray-900"
               style={{ fontFamily: 'DM Sans', fontWeight: 700 }}
             >
-              Industries we serve
+              Industries We Specialize In
             </h2>
             <p
               className="text-xl text-gray-600 max-w-2xl mx-auto"

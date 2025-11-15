@@ -112,7 +112,7 @@ export function Footer() {
                   {carrier}
                 </li>
               ))}
-              <li className="text-sm text-gray-400 mt-3">+ 10 more carriers</li>
+              <li className="text-sm text-gray-400 mt-3">+30 more carriers</li>
             </ul>
           </div>
         </div>
