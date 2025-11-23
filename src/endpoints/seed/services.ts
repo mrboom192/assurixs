@@ -20,29 +20,6 @@ export const servicesSeedData: Omit<Service, 'createdAt' | 'id' | 'updatedAt'>[]
       'Coverage for your business property, equipment, and inventory against damage and loss.',
   },
   {
-    icon: 'user-check',
-    name: 'Group or Individual Disability',
-    description:
-      'Income protection for employees or individuals unable to work due to illness or injury.',
-  },
-  {
-    icon: 'heart',
-    name: 'Life Insurance',
-    description:
-      'Financial security for your loved ones and key person protection for your business.',
-  },
-  {
-    icon: 'users',
-    name: 'Group Employee Benefits',
-    description:
-      'Competitive benefit packages including health, dental, vision, and retirement plans.',
-  },
-  {
-    icon: 'file-text',
-    name: 'Professional Liability',
-    description: 'Errors and omissions coverage for professional services and advice.',
-  },
-  {
     icon: 'heart-pulse',
     name: 'Dental Malpractice',
     description:
@@ -62,21 +39,15 @@ export const servicesSeedData: Omit<Service, 'createdAt' | 'id' | 'updatedAt'>[]
   },
   {
     icon: 'lock',
-    name: 'Cyber Liability',
+    name: 'Cyber Billing and E&O',
     description:
-      'Coverage for data breaches, cyber attacks, and privacy liability in the digital age.',
-  },
-  {
-    icon: 'dollar-sign',
-    name: 'Billing E&O',
-    description:
-      'Errors and omissions coverage specifically for medical billing companies and professionals.',
+      'Combined cyber liability and billing errors protection covering data breaches, cyber attacks, privacy violations, and mistakes in billing or claims processing.',
   },
   {
     icon: 'file-text',
-    name: 'E&O Coverage',
+    name: 'Professional Liability E&O Coverage',
     description:
-      'Professional liability protection for errors, omissions, and negligence in your services.',
+      'Comprehensive protection against professional errors, omissions, and negligence in the services you provide.',
   },
   {
     icon: 'building',

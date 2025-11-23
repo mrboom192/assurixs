@@ -42,7 +42,7 @@ export default function IndustriesGridClient({
               return (
                 <Card
                   key={index}
-                  className="overflow-hidden border border-gray-200 transition-all duration-300 group hover:shadow-2xl"
+                  className="flex flex-col overflow-hidden border border-gray-200 transition-all duration-300 group hover:shadow-2xl"
                 >
                   <div className="relative h-56 overflow-hidden">
                     <img
@@ -72,7 +72,7 @@ export default function IndustriesGridClient({
                     </div>
                   </div>
 
-                  <CardContent className="p-6">
+                  <CardContent className="flex flex-col p-6 justify-between flex-grow">
                     <p
                       className="text-muted-foreground mb-4 line-clamp-3"
                       style={{ fontFamily: 'DM Sans', fontWeight: 400 }}
@@ -80,37 +80,38 @@ export default function IndustriesGridClient({
                       {industry.description}
                     </p>
 
-                    {/* Challenges */}
-                    <div className="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
-                      <h4
-                        className="text-sm mb-3 text-gray-900"
-                        style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                      >
-                        Coverage Areas:
-                      </h4>
-                      <ul className="space-y-2">
-                        {industry.coverageAreas.map((coverageArea) => (
-                          <li
-                            key={coverageArea.id}
-                            className="text-sm text-muted-foreground flex items-start gap-2"
-                          >
-                            <CheckCircle2 className="w-4 h-4 text-gray-900 flex-shrink-0 mt-0.5" />
-                            <span>{coverageArea.area}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div>
+                      {/* Challenges */}
+                      <div className="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+                        <h4
+                          className="text-sm mb-3 text-gray-900"
+                          style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+                        >
+                          Coverage Areas:
+                        </h4>
+                        <ul className="space-y-2">
+                          {industry.coverageAreas.map((coverageArea) => (
+                            <li
+                              key={coverageArea.id}
+                              className="text-sm text-muted-foreground flex items-start gap-2"
+                            >
+                              <CheckCircle2 className="w-4 h-4 text-gray-900 flex-shrink-0 mt-0.5" />
+                              <span>{coverageArea.area}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <Link href="/contact">
+                        <Button
+                          variant="outline"
+                          className="w-full border-gray-200 group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition-all"
+                          style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
+                        >
+                          Request a Quote
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
-
-                    <Link href="/contact">
-                      <Button
-                        variant="outline"
-                        className="w-full border-gray-200 group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition-all"
-                        style={{ fontFamily: 'DM Sans', fontWeight: 600 }}
-                      >
-                        Get a Quote
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
                   </CardContent>
                 </Card>
               )

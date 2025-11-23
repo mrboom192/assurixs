@@ -67,7 +67,9 @@ const Sidebar = ({ shouldInvert, navLinks }: SidebarProps) => {
                 </Link>
               ))}
               <Link href="/contact">
-                <Button className="bg-gray-900 text-white hover:bg-gray-800">Get a Quote</Button>
+                <Button className="bg-gray-900 text-white hover:bg-gray-800">
+                  Get Your Free Quote
+                </Button>
               </Link>
             </nav>
           </div>

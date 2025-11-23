@@ -115,7 +115,7 @@ export function Header({ isAdminBarEnabled }: { isAdminBarEnabled?: boolean }) {
                     : 'bg-white text-gray-900 hover:bg-gray-100'
               }`}
             >
-              Get a Quote
+              Get Your Free Quote
             </Button>
           </Link>
 

@@ -7,7 +7,12 @@ export async function HomeIndustriesGrid() {
   const payload = await getPayload({ config })
 
   const industries = await payload
-    .find({ collection: 'industries-served', pagination: false })
+    .find({
+      collection: 'industries-served',
+      pagination: false,
+      depth: 1,
+      sort: 'createdAt',
+    })
     .then((res) => res.docs)
 
   return (
