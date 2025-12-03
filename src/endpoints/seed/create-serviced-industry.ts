@@ -11,11 +11,11 @@ const industries: (Omit<
     icon: 'stethoscope',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/physicians.webp',
     description:
-      'Comprehensive malpractice and business insurance for medical practices of all specialties.',
+      'We provide comprehensive malpractice and business insurance for medical practices of all specialties.',
     coverageAreas: [
       { area: 'Medical Malpractice Insurance' },
       { area: 'General Liability' },
-      { area: 'Business Property Coverage' },
+      { area: 'Workers Compensation' },
     ],
     category: 'Healthcare',
   },
@@ -24,11 +24,11 @@ const industries: (Omit<
     icon: 'award',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/dentists.webp',
     description:
-      'Specialized coverage for dental practices including malpractice and equipment protection.',
+      'We offer tailored coverage for dentists, with protection for malpractice, liability, and workers compensation.',
     coverageAreas: [
       { area: 'Dental Malpractice' },
-      { area: 'Equipment Coverage' },
       { area: 'General Liability' },
+      { area: 'Workers Compensation' },
     ],
     category: 'Healthcare',
   },
@@ -37,11 +37,11 @@ const industries: (Omit<
     icon: 'pill',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/pharmacies.webp',
     description:
-      'Complete protection for retail and compounding pharmacies with errors & omissions coverage.',
+      'Reliable coverage for pharmacies, offering protection across professional liability, general liability, and workers compensation.',
     coverageAreas: [
       { area: 'Professional Liability' },
-      { area: 'Product Liability' },
-      { area: 'Business Property' },
+      { area: 'Workers Compensation' },
+      { area: 'General Liability' },
     ],
     category: 'Healthcare',
   },
@@ -51,8 +51,8 @@ const industries: (Omit<
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/restaurants-bars.webp',
     description: 'Complete protection for food service businesses including liquor liability.',
     coverageAreas: [
-      { area: 'General Liability' },
       { area: 'Liquor Liability' },
+      { area: 'General Liability' },
       { area: 'Workers Compensation' },
     ],
     category: 'Food & Beverage',
@@ -62,23 +62,24 @@ const industries: (Omit<
     icon: 'siren',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/urgent-care.webp',
     description:
-      'Comprehensive coverage for urgent care facilities with extended hours protection.',
+      'Flexible insurance solutions for urgent care centers, supporting medical malpractice protection, general liability coverage, and workers compensation.”',
     coverageAreas: [
       { area: 'Medical Malpractice' },
       { area: 'General Liability' },
-      { area: 'Property Coverage' },
+      { area: 'Workers Compensation' },
     ],
     category: 'Healthcare',
   },
   {
     name: 'Surgery Centers',
-    icon: 'scissors',
+    icon: 'briefcase-medical',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/surgery-centers.webp',
-    description: 'Comprehensive coverage for surgery centers with extended hours protection.',
+    description:
+      'Tailored insurance options for surgery centers, offering malpractice, liability, and workers compensation coverage.',
     coverageAreas: [
       { area: 'Medical Malpractice' },
       { area: 'General Liability' },
-      { area: 'Anesthesia Liability' },
+      { area: 'Workers Compensation' },
     ],
     category: 'Healthcare',
   },
@@ -87,11 +88,11 @@ const industries: (Omit<
     icon: 'hospital',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/hospitals.webp',
     description:
-      'Essential liability and property protection for hospitals and large healthcare facilities.',
+      'Comprehensive support for hospitals, offering coverage for malpractice, general liability, and workers compensation.',
     coverageAreas: [
-      { area: 'Medical Professional Liability' },
+      { area: 'Medical Malpractice' },
       { area: 'General Liability' },
-      { area: 'Property & Equipment Coverage' },
+      { area: 'Workers Compensation' },
     ],
     category: 'Healthcare',
   },
@@ -101,9 +102,9 @@ const industries: (Omit<
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/house-of-worship.webp',
     description: 'Insurance solutions tailored for religious institutions and places of worship.',
     coverageAreas: [
-      { area: 'Event Liability Coverage' },
+      { area: 'General Liability' },
       { area: 'Property Coverage' },
-      { area: 'Volunteer Coverage' },
+      { area: 'Workers Comp & D&O Coverage' },
     ],
     category: 'Nonprofit',
   },
@@ -112,11 +113,11 @@ const industries: (Omit<
     icon: 'heart',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/nonprofits.webp',
     description:
-      'Affordable coverage for nonprofit organizations including D&O and volunteer protection.',
+      'Comprehensive insurance solutions for nonprofits, covering general liability, property, and D&O needs.”',
     coverageAreas: [
       { area: 'General Liability' },
-      { area: 'Directors & Officers' },
       { area: 'Property Coverage' },
+      { area: 'Directors & Officers' },
     ],
     category: 'Nonprofit',
   },
@@ -127,8 +128,8 @@ const industries: (Omit<
     description: 'Comprehensive coverage for property managers and real estate professionals.',
     coverageAreas: [
       { area: 'General Liability' },
-      { area: 'Errors & Omissions' },
       { area: 'Property Coverage' },
+      { area: 'Directors & Officers' },
     ],
     category: 'Real Estate',
   },
@@ -139,8 +140,8 @@ const industries: (Omit<
     description: 'Specialized insurance for diagnostic facilities and medical laboratories.',
     coverageAreas: [
       { area: 'Professional Liability' },
-      { area: 'Equipment Protection' },
-      { area: 'Business Interruption' },
+      { area: 'General Liability' },
+      { area: 'Workers Compensation' },
     ],
     category: 'Healthcare',
   },
@@ -152,7 +153,7 @@ const industries: (Omit<
     coverageAreas: [
       { area: 'Professional Liability' },
       { area: 'General Liability' },
-      { area: 'Property Coverage' },
+      { area: 'Workers Compensation' },
     ],
     category: 'Healthcare',
   },
@@ -162,9 +163,9 @@ const industries: (Omit<
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/legal-services.webp',
     description: 'Professional liability and business coverage for law firms and attorneys.',
     coverageAreas: [
-      { area: 'Malpractice Insurance' },
-      { area: 'Cyber Liability' },
+      { area: 'Professional Liability' },
       { area: 'General Liability' },
+      { area: 'Workers Compensation' },
     ],
     category: 'Professional Services',
   },

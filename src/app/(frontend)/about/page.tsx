@@ -150,7 +150,7 @@ export default function AboutPage() {
                 <div className="relative h-96 lg:h-auto bg-gray-900">
                   {/* Mobile Image */}
                   <img
-                    src="/ahmad-cropped.png"
+                    src="/ahmad-cropped.jpeg"
                     alt="Ahmad Oyoun"
                     className="w-full h-full object-cover block lg:hidden"
                   />
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 <div className="relative h-96 lg:h-auto bg-gray-900 lg:order-2">
                   {/* Mobile Image */}
                   <img
-                    src="/sallman-cropped.png"
+                    src="/sallman-cropped.jpeg"
                     alt="Sallman Oyoun"
                     className="w-full h-full object-cover block lg:hidden"
                   />
