@@ -39,15 +39,21 @@ export const servicesSeedData: Omit<Service, 'createdAt' | 'id' | 'updatedAt'>[]
   },
   {
     icon: 'lock',
-    name: 'Cyber Billing and E&O',
+    name: 'Cyber Liability Coverage',
     description:
-      'Combined cyber liability and billing errors protection covering data breaches, cyber attacks, privacy violations, and mistakes in billing or claims processing.',
+      'Protection against data breaches, cyber attacks, ransomware, and privacy violations involving digital information.',
+  },
+  {
+    icon: 'dollar-sign',
+    name: 'Billing Errors & Omissions (E&O) Coverage',
+    description:
+      'Coverage for financial losses resulting from billing mistakes, coding errors, or inaccuracies in claims processing.',
   },
   {
     icon: 'file-text',
-    name: 'Professional Liability E&O Coverage',
+    name: 'Professional Liability Coverage',
     description:
-      'Comprehensive protection against professional errors, omissions, and negligence in the services you provide.',
+      'Comprehensive protection against professional mistakes, omissions, or negligence in the services you provide.',
   },
   {
     icon: 'building',
