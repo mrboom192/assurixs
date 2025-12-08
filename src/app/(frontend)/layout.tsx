@@ -14,6 +14,7 @@ import { InitTheme } from '@/providers/Theme/InitTheme'
 import { Footer } from '@/components/Footer'
 import { Providers } from '@/providers'
 import Script from 'next/script'
+import AccessibilityButton from '@/components/AccessibilityButton'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -42,8 +43,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }}
         />
       </head>
-      <body>
+      <body className="relative">
         <Providers>
+          <AccessibilityButton />
           <Header isAdminBarEnabled={isEnabled} />
           {children}
           <Footer />

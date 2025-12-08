@@ -1,7 +1,6 @@
 import { getPayload } from 'payload'
 import IndustriesGridClient from './client'
 import config from '@payload-config'
-import { Media } from '@/payload-types'
 
 export default async function IndustriesGrid() {
   const payload = await getPayload({ config })

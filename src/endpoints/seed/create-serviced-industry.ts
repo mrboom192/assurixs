@@ -33,31 +33,6 @@ const industries: (Omit<
     category: 'Healthcare',
   },
   {
-    name: 'Pharmacies',
-    icon: 'pill',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/pharmacies.webp',
-    description:
-      'Reliable coverage for pharmacies, offering protection across professional liability, general liability, and workers compensation.',
-    coverageAreas: [
-      { area: 'Professional Liability' },
-      { area: 'Workers Compensation' },
-      { area: 'General Liability' },
-    ],
-    category: 'Healthcare',
-  },
-  {
-    name: 'Restaurants',
-    icon: 'utensils-crossed',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/restaurants-bars.webp',
-    description: 'Complete protection for food service businesses including liquor liability.',
-    coverageAreas: [
-      { area: 'Liquor Liability' },
-      { area: 'General Liability' },
-      { area: 'Workers Compensation' },
-    ],
-    category: 'Food & Beverage',
-  },
-  {
     name: 'Urgent Care Centers',
     icon: 'siren',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/urgent-care.webp',
@@ -84,6 +59,19 @@ const industries: (Omit<
     category: 'Healthcare',
   },
   {
+    name: 'Pharmacies',
+    icon: 'pill',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/pharmacies.webp',
+    description:
+      'Reliable coverage for pharmacies, offering protection across professional liability, general liability, and workers compensation.',
+    coverageAreas: [
+      { area: 'Professional Liability' },
+      { area: 'Workers Compensation' },
+      { area: 'General Liability' },
+    ],
+    category: 'Healthcare',
+  },
+  {
     name: 'Hospitals',
     icon: 'hospital',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/hospitals.webp',
@@ -97,29 +85,16 @@ const industries: (Omit<
     category: 'Healthcare',
   },
   {
-    name: 'House of Worship',
-    icon: 'church',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/house-of-worship.webp',
-    description: 'Insurance solutions tailored for religious institutions and places of worship.',
+    name: 'Restaurants',
+    icon: 'utensils-crossed',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/restaurants-bars.webp',
+    description: 'Complete protection for food service businesses including liquor liability.',
     coverageAreas: [
+      { area: 'Liquor Liability' },
       { area: 'General Liability' },
-      { area: 'Property Coverage' },
-      { area: 'Workers Comp & D&O Coverage' },
+      { area: 'Workers Compensation' },
     ],
-    category: 'Nonprofit',
-  },
-  {
-    name: 'Nonprofits',
-    icon: 'heart',
-    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/nonprofits.webp',
-    description:
-      'Comprehensive insurance solutions for nonprofits, covering general liability, property, and D&O needs.”',
-    coverageAreas: [
-      { area: 'General Liability' },
-      { area: 'Property Coverage' },
-      { area: 'Directors & Officers' },
-    ],
-    category: 'Nonprofit',
+    category: 'Food & Beverage',
   },
   {
     name: 'Commercial Real Estate',
@@ -132,6 +107,18 @@ const industries: (Omit<
       { area: 'Directors & Officers' },
     ],
     category: 'Real Estate',
+  },
+  {
+    name: 'House of Worship',
+    icon: 'church',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/house-of-worship.webp',
+    description: 'Insurance solutions tailored for religious institutions and places of worship.',
+    coverageAreas: [
+      { area: 'General Liability' },
+      { area: 'Property Coverage' },
+      { area: 'Workers Comp & D&O Coverage' },
+    ],
+    category: 'Nonprofit',
   },
   {
     name: 'Labs & Diagnostics',
@@ -158,10 +145,36 @@ const industries: (Omit<
     category: 'Healthcare',
   },
   {
+    name: 'Nonprofits',
+    icon: 'heart',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/nonprofits.webp',
+    description:
+      'Comprehensive insurance solutions for nonprofits, covering general liability, property, and D&O needs.”',
+    coverageAreas: [
+      { area: 'General Liability' },
+      { area: 'Property Coverage' },
+      { area: 'Directors & Officers' },
+    ],
+    category: 'Nonprofit',
+  },
+  {
     name: 'Legal Services',
     icon: 'scale',
     url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/legal-services.webp',
     description: 'Professional liability and business coverage for law firms and attorneys.',
+    coverageAreas: [
+      { area: 'Professional Liability' },
+      { area: 'General Liability' },
+      { area: 'Workers Compensation' },
+    ],
+    category: 'Professional Services',
+  },
+  {
+    name: 'Insurance Agencies',
+    icon: 'building',
+    url: 'https://raw.githubusercontent.com/mrboom192/assurixs-images/refs/heads/main/industries/insurance-agencies.webp',
+    description:
+      'Comprehensive business protection for insurance agencies, including professional liability, general liability, and workers compensation.',
     coverageAreas: [
       { area: 'Professional Liability' },
       { area: 'General Liability' },

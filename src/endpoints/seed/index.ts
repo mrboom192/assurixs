@@ -7,12 +7,7 @@ import { createInsuranceCarriers } from './create-insurance-carriers'
 import { createIndustryCategories } from './create-industry-category'
 import { createServicedIndustries } from './create-serviced-industry'
 
-const collections: CollectionSlug[] = [
-  'insurance-carrier',
-  'industries-served',
-  'services',
-  'media',
-]
+const collections: CollectionSlug[] = ['insurance-carrier', 'industries-served', 'services']
 
 // const globals: GlobalSlug[] = ['home']
 
@@ -56,6 +51,7 @@ export const seed = async ({
     collections.map((collection) => payload.db.deleteMany({ collection, req, where: {} })),
   )
   await payload.db.deleteMany({ collection: 'industry-category', req, where: {} })
+  await payload.db.deleteMany({ collection: 'media', req, where: {} })
   await Promise.all(
     collections
       .filter((collection) => Boolean(payload.collections[collection].config.versions))
