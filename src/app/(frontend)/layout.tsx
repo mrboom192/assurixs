@@ -23,7 +23,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
-        <link href="/favicon.ico" rel="icon" sizes="32x32" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <Script
           id="zoominfo-script"
           strategy="beforeInteractive"
@@ -58,10 +62,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 export const metadata: Metadata = {
   title: 'Medical Malpractice & Professional Liability Insurance | Assurixs',
   description:
-    'Assurixs specializes in providing tailored medical malpractice and professional liability insurance solutions for healthcare professionals. Get a quote today!',
+    'We specialize in insuring medical and dental providers with tailored, reliable coverage.',
   metadataBase: new URL(getServerSideURL()),
-  twitter: {
-    card: 'summary_large_image',
-    creator: '@payloadcms',
-  },
 }
