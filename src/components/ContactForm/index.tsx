@@ -38,12 +38,12 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const industries = [
-    'Pharmacy',
     'Medical/Dental Practice',
-    'Life Science/Research',
+    'Pharmacy',
     'Restaurant/Food Service',
     'Commercial Real Estate',
     'Professional Services',
+    'Life Science/Research',
     'Other',
   ]
 
