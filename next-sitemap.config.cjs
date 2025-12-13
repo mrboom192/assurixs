@@ -1,20 +1,29 @@
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SERVER_URL ||
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-  'https://example.com'
-
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: SITE_URL,
+  siteUrl: process.env.SITE_URL,
   generateRobotsTxt: true,
-  exclude: ['/posts-sitemap.xml', '/pages-sitemap.xml', '/*', '/posts/*'],
+  generateIndexSitemap: true,
+  changefreq: 'weekly',
+  priority: 0.7,
+  autoLastmod: true,
+
+  exclude: ['/admin/*', '/api/*', '/_next/*'],
+
+  additionalPaths: async (config) => [
+    { loc: '/' },
+    { loc: '/our-services' },
+    { loc: '/industries-we-serve' },
+    { loc: '/about' },
+    { loc: '/contact' },
+  ],
+
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
-        disallow: '/admin/*',
+        allow: '/',
+        disallow: ['/admin'],
       },
     ],
-    additionalSitemaps: [`${SITE_URL}/pages-sitemap.xml`, `${SITE_URL}/posts-sitemap.xml`],
   },
 }
