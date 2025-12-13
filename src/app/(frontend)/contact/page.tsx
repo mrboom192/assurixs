@@ -1,6 +1,42 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { ContactForm } from '@/components/ContactForm'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Get a Free Insurance Quote',
+  description:
+    'Contact Assurixs Insurance Services to request a free quote or speak with an experienced broker. Personalized insurance solutions backed by A-rated carriers.',
+  alternates: {
+    canonical: 'https://assurixs.com/contact',
+  },
+  openGraph: {
+    title: 'Contact Assurixs Insurance Services',
+    description:
+      'Get in touch with Assurixs to discuss your insurance needs and receive a personalized quote from experienced brokers.',
+    url: 'https://assurixs.com/contact',
+    siteName: 'Assurixs',
+    images: [
+      {
+        url: 'https://assurixs.com/hero.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Assurixs Insurance Services',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Assurixs | Free Insurance Quote',
+    description: 'Request a free insurance quote or speak with an experienced broker at Assurixs.',
+    images: ['https://assurixs.com/hero.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function ContactPage() {
   return (

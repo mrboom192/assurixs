@@ -4,6 +4,42 @@ import { CarrierCarousel } from '@/components/CarrierCarousel/Component'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HomeIndustriesGrid } from '@/components/HomeIndustriesGrid'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Commercial & Professional Liability Insurance | Assurixs',
+  description:
+    'Commercial and professional liability insurance tailored to your industry. Get matched with A-rated carriers and save up to 30% with Assurixs.',
+  alternates: {
+    canonical: 'https://assurixs.com/',
+  },
+  openGraph: {
+    title: 'Commercial & Professional Liability Insurance | Assurixs',
+    description:
+      'Tailored commercial insurance solutions backed by A-rated carriers. Personalized service, competitive rates, and over 30 years of experience.',
+    url: 'https://assurixs.com/',
+    siteName: 'Assurixs',
+    images: [
+      {
+        url: 'https://assurixs.com/hero.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Assurixs insurance specialists',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Commercial & Professional Liability Insurance | Assurixs',
+    description: 'Save up to 30% on commercial and professional liability insurance with Assurixs.',
+    images: ['https://assurixs.com/hero.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function HomePage() {
   const benefits = [

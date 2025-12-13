@@ -62,6 +62,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 export const metadata: Metadata = {
   title: 'Medical Malpractice & Professional Liability Insurance | Assurixs',
   description:
-    'We specialize in insuring medical and dental providers with tailored, reliable coverage.',
+    'We specialize in insuring medical and dental providers with tailored, reliable insurance coverage.',
   metadataBase: new URL(getServerSideURL()),
 }

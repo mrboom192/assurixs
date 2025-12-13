@@ -2,6 +2,42 @@ import { Award, Target, Heart, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Assurixs Insurance Services | Trusted Insurance Brokers',
+  description:
+    'Learn about Assurixs Insurance Services—our mission, values, and leadership team. Over 30 years of experience providing personalized insurance solutions backed by A-rated carriers.',
+  alternates: {
+    canonical: 'https://assurixs.com/about',
+  },
+  openGraph: {
+    title: 'About Assurixs Insurance Services',
+    description:
+      'Meet the Assurixs team and learn how our experience, values, and A-rated carrier partnerships deliver trusted insurance solutions.',
+    url: 'https://assurixs.com/about',
+    siteName: 'Assurixs',
+    images: [
+      {
+        url: 'https://assurixs.com/ahmad.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Ahmad Oyoun, President & Founder of Assurixs',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Assurixs Insurance Services',
+    description: 'Discover the leadership, mission, and values behind Assurixs Insurance Services.',
+    images: ['https://assurixs.com/ahmad.jpeg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function AboutPage() {
   const values = [

@@ -3,7 +3,43 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import ServicesGrid from '@/components/ServicesGrid'
 import Link from 'next/link'
-import { L } from 'vitest/dist/chunks/reporters.d.DL9pg5DB.js'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Our Services | Business Insurance Solutions | Assurixs',
+  description:
+    'Comprehensive business insurance services across healthcare, professional, and commercial industries. Personalized coverage backed by A-rated carriers and expert brokers at Assurixs.',
+  alternates: {
+    canonical: 'https://assurixs.com/our-services',
+  },
+  openGraph: {
+    title: 'Business Insurance Services | Assurixs',
+    description:
+      'Explore Assurixs business insurance services. Specialized coverage, A-rated carriers, and personalized broker support to protect your business.',
+    url: 'https://assurixs.com/our-services',
+    siteName: 'Assurixs',
+    images: [
+      {
+        url: 'https://assurixs.com/hero.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Assurixs business insurance services',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Business Insurance Services | Assurixs',
+    description:
+      'Specialized business insurance solutions backed by A-rated carriers and personalized service.',
+    images: ['https://assurixs.com/hero.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function ServicesPage() {
   const differentiators = [

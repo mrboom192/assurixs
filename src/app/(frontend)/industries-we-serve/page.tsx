@@ -4,6 +4,43 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import IndustriesGrid from '@/components/IndustriesGrid'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Industries We Serve | Specialized Business Insurance | Assurixs',
+  description:
+    'Explore the industries Assurixs specializes in, including medical, dental, urgent care, and commercial businesses. Industry-specific insurance expertise backed by A-rated carriers.',
+  alternates: {
+    canonical: 'https://assurixs.com/industries-we-serve',
+  },
+  openGraph: {
+    title: 'Industries We Serve | Assurixs Insurance Services',
+    description:
+      'Specialized insurance solutions for healthcare, professional, and commercial industries. Discover how Assurixs protects businesses with industry-specific expertise.',
+    url: 'https://assurixs.com/industries-we-serve',
+    siteName: 'Assurixs',
+    images: [
+      {
+        url: 'https://assurixs.com/hero.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Industries served by Assurixs insurance specialists',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Industries We Serve | Assurixs',
+    description:
+      'Industry-specific insurance solutions backed by A-rated carriers and expert brokers.',
+    images: ['https://assurixs.com/hero.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function IndustriesPage() {
   const testimonials = [
