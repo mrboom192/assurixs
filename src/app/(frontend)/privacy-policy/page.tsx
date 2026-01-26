@@ -88,6 +88,10 @@ export default function PrivacyPage() {
             </ul>
             <p>We do not sell your personal information to third parties.</p>
 
+            <p>
+              <strong>SMS Consent:</strong> SMS consent is not shared with third parties.
+            </p>
+
             <h2>Data Security</h2>
             <p>
               We implement appropriate technical and organizational measures to protect your
@@ -110,6 +114,25 @@ export default function PrivacyPage() {
               Our website may use cookies and similar tracking technologies to enhance your browsing
               experience. You can control cookies through your browser settings.
             </p>
+
+            <h2>SMS Terms of Service</h2>
+            <p>
+              By opting into SMS from a web form or other medium, you are agreeing to receive SMS
+              messages from Assurixs Insurance Services, Inc. This includes SMS messages for
+              Conversations (external). Message frequency varies. Message and data rates may apply.
+              See our privacy policy at{' '}
+              <a
+                href="https://www.assurixs.com/privacy-policy"
+                className="text-[#1B9876] underline"
+              >
+                https://www.assurixs.com/privacy-policy
+              </a>
+              .
+            </p>
+            <ul>
+              <li>Message HELP for help.</li>
+              <li>Reply STOP to any message to opt out.</li>
+            </ul>
 
             <h2>Children&apos;s Privacy</h2>
             <p>
